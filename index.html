@@ -1,1804 +1,782 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>卤味行业决策参考报告 | 榆社县专属</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #C0392B;
-            --primary-light: #E74C3C;
-            --primary-dark: #922B21;
-            --secondary: #D4A017;
-            --accent: #2C3E50;
-            --bg-warm: #FDF5EE;
-            --bg-card: #FFFFFF;
-            --text: #2C3E50;
-            --text-light: #7F8C8D;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background: var(--bg-warm);
-            color: var(--text);
-            line-height: 1.7;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>卤味行业决策参考报告 | 榆社县专属</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #C0392B; --primary-light: #E74C3C; --primary-dark: #922B21;
+  --secondary: #D4A017; --accent: #2C3E50;
+  --bg-warm: #FDF5EE; --bg-card: #FFFFFF;
+  --text: #2C3E50; --text-light: #7F8C8D;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08); --radius: 16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg-warm);color:var(--text);line-height:1.7;}
 
-        /* Header */
-        .hero {
-            background: linear-gradient(135deg, #2C1810 0%, #C0392B 50%, #D4A017 100%);
-            color: white;
-            padding: 50px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(212,160,23,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(192,57,43,0.1) 0%, transparent 50%);
-            animation: float 8s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translate(0,0) rotate(0deg); }
-            50% { transform: translate(20px,-20px) rotate(3deg); }
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 14px;
-            margin-bottom: 14px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .hero h1 { font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; margin-bottom: 6px; letter-spacing: 2px; }
-        .hero .subtitle { font-size: clamp(13px, 1.8vw, 18px); opacity: 0.9; font-weight: 300; }
-        .hero .location { font-size: 14px; opacity: 0.75; margin-top: 10px; }
-        .hero .location span {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 3px 14px;
-            border-radius: 20px;
-            margin: 0 4px;
-        }
+.hero{
+  background:linear-gradient(135deg,#2C1810 0%,#C0392B 50%,#D4A017 100%);
+  color:#fff;padding:40px 20px 36px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle at 30% 50%,rgba(212,160,23,0.15) 0%,transparent 50%),
+             radial-gradient(circle at 70% 50%,rgba(192,57,43,0.1) 0%,transparent 50%);
+  animation:float 8s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(20px,-20px) rotate(3deg)}}
+.hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.2);padding:5px 18px;border-radius:50px;font-size:13px;margin-bottom:12px;}
+.hero h1{font-size:clamp(24px,4vw,40px);font-weight:900;margin-bottom:4px;letter-spacing:2px;}
+.hero .subtitle{font-size:clamp(13px,1.6vw,17px);opacity:.9;font-weight:300;}
+.hero .location{font-size:14px;opacity:.75;margin-top:8px;}
+.hero .location span{display:inline-block;background:rgba(255,255,255,.15);padding:2px 12px;border-radius:20px;margin:0 3px;}
 
-        /* Navigation */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            padding: 0 16px;
-            overflow-x: auto;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            scrollbar-width: none;
-        }
-        .nav::-webkit-scrollbar { display: none; }
-        .nav a {
-            display: inline-block;
-            padding: 12px 16px;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-        .nav a:hover, .nav a.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
+.nav{
+  position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);padding:0 12px;overflow-x:auto;white-space:nowrap;
+  display:flex;align-items:center;justify-content:center;gap:4px;scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{display:inline-block;padding:12px 14px;color:var(--text-light);text-decoration:none;font-size:13px;font-weight:500;border-bottom:3px solid transparent;}
+.nav a:hover,.nav a.active{color:var(--primary);border-bottom-color:var(--primary);}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 40px 0; }
-        .section-title {
-            font-size: clamp(20px, 2.8vw, 30px);
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--primary-dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-subtitle {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 24px;
-            border-left: 4px solid var(--secondary);
-            padding-left: 16px;
-        }
-        .section-divider {
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-            margin-bottom: 20px;
-        }
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.section{padding:36px 0;}
+.section-title{font-size:clamp(19px,2.5vw,28px);font-weight:700;color:var(--primary-dark);display:flex;align-items:center;gap:10px;}
+.section-subtitle{color:var(--text-light);font-size:14px;margin-bottom:20px;border-left:4px solid var(--secondary);padding-left:14px;}
+.section-divider{width:50px;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px;margin-bottom:18px;}
 
-        .card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 24px;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(0,0,0,0.1); }
+.card{background:var(--bg-card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:18px;transition:transform .2s;}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,0,0,.1);}
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
-        @media (max-width: 768px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-        }
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
 
-        .stat-number {
-            font-size: clamp(26px, 3.5vw, 40px);
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: var(--transition);
-        }
-        .stat-label { font-size: 14px; color: var(--text-light); margin-top: 4px; }
-        .stat-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+.stat-number{font-size:clamp(24px,3vw,36px);font-weight:900;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-label{font-size:13px;color:var(--text-light);margin-top:3px;}
+.stat-sub{font-size:11px;color:var(--text-light);}
 
-        .chart-wrapper {
-            position: relative;
-            width: 100%;
-            max-height: 340px;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-        .chart-wrapper canvas { width: 100% !important; max-height: 320px; }
-        .chart-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-align: center;
-        }
+.chart-wrapper{position:relative;width:100%;max-height:320px;margin:6px 0;cursor:pointer;}
+.chart-wrapper canvas{width:100%!important;max-height:300px;}
+.chart-title{font-size:14px;font-weight:600;margin-bottom:8px;text-align:center;}
 
-        /* ===== FILTER BAR ===== */
-        .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            padding: 16px 20px;
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 24px;
-        }
-        .filter-group {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .filter-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-light);
-            white-space: nowrap;
-        }
-        .filter-btn {
-            padding: 6px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 20px;
-            background: white;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
-            transition: var(--transition);
-            font-family: inherit;
-        }
-        .filter-btn:hover {
-            border-color: var(--primary-light);
-            color: var(--primary);
-        }
-        .filter-btn.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
-        }
-        .filter-divider {
-            width: 1px;
-            height: 28px;
-            background: #e0e0e0;
-            margin: 0 4px;
-        }
-        .filter-hint {
-            font-size: 12px;
-            color: var(--secondary);
-            margin-left: auto;
-            animation: pulse-hint 2s ease-in-out infinite;
-        }
-        @keyframes pulse-hint {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
+/* ===== 分析工作台 ===== */
+.workbench{
+  background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+  border-radius:var(--radius);padding:22px;margin-bottom:20px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.workbench::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,#E74C3C,#D4A017,#27AE60,#2980B9);
+  animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer{0%,100%{opacity:.7}50%{opacity:1}}
+.workbench-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.workbench-header h3{font-size:18px;font-weight:700;color:#fff;}
+.workbench-badge{font-size:11px;background:rgba(212,160,23,.25);color:#D4A017;padding:3px 10px;border-radius:10px;font-weight:600;}
+.selection-area{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;min-height:32px;align-items:center;}
+.selection-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;
+  border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);
+  cursor:pointer;transition:all .2s;
+}
+.selection-chip:hover{border-color:#D4A017;color:#D4A017;}
+.selection-chip .x{font-size:14px;font-weight:700;opacity:.6;margin-left:2px;}
+.selection-chip .x:hover{opacity:1;color:#E74C3C;}
+.selection-empty{font-size:13px;opacity:.5;font-style:italic;}
+.selection-hint{font-size:11px;color:#D4A017;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+.analysis-output{background:rgba(0,0,0,.25);border-radius:12px;padding:18px;font-size:14px;line-height:1.9;min-height:80px;}
+.analysis-output strong{color:#FFD700;}
+.analysis-output .tag-inline{display:inline-block;background:rgba(192,57,43,.4);padding:1px 8px;border-radius:6px;font-size:11px;margin:0 2px;}
 
-        /* ===== LINKAGE INDICATOR ===== */
-        .linkage-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 11px;
-            color: var(--text-light);
-            background: #f5f5f5;
-            padding: 2px 10px;
-            border-radius: 10px;
-            margin-left: 8px;
-        }
-        .linkage-badge .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--secondary);
-            animation: blink 1.5s ease-in-out infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+/* ===== 图表高亮提示 ===== */
+.chart-click-hint{
+  position:absolute;top:6px;right:10px;font-size:10px;
+  color:rgba(0,0,0,.35);pointer-events:none;z-index:5;
+}
 
-        /* ===== ACTIVE FILTER DISPLAY ===== */
-        .active-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-            min-height: 32px;
-        }
-        .active-filter-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            background: #FDEDEC;
-            border: 1px solid #F5B7B1;
-            border-radius: 20px;
-            font-size: 12px;
-            color: var(--primary-dark);
-            font-weight: 500;
-        }
-        .active-filter-tag .clear {
-            cursor: pointer;
-            font-weight: 700;
-            color: var(--primary);
-            margin-left: 2px;
-        }
-        .active-filter-tag .clear:hover { color: var(--primary-dark); }
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--primary),var(--secondary));border-radius:3px;}
+.timeline-item{position:relative;margin-bottom:20px;padding-left:18px;}
+.timeline-item::before{content:'';position:absolute;left:-22px;top:5px;width:12px;height:12px;background:var(--primary);border-radius:50%;border:3px solid var(--bg-warm);box-shadow:0 0 0 3px var(--primary);}
+.timeline-year{font-size:17px;font-weight:700;color:var(--primary);}
+.timeline-text{font-size:13px;color:var(--text);margin-top:3px;}
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 12px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-            border-radius: 3px;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 24px;
-            padding-left: 20px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid var(--bg-warm);
-            box-shadow: 0 0 0 3px var(--primary);
-        }
-        .timeline-year { font-size: 18px; font-weight: 700; color: var(--primary); }
-        .timeline-text { font-size: 14px; color: var(--text); margin-top: 4px; }
+.highlight-box{background:linear-gradient(135deg,#FFF8F0,#FFF0E8);border-left:5px solid var(--secondary);border-radius:12px;padding:18px;margin:14px 0;}
+.highlight-box h4{color:var(--primary-dark);margin-bottom:6px;font-size:15px;}
+.highlight-box ul{padding-left:16px;}
+.highlight-box li{margin-bottom:4px;font-size:13px;}
 
-        .highlight-box {
-            background: linear-gradient(135deg, #FFF8F0, #FFF0E8);
-            border-left: 5px solid var(--secondary);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 16px 0;
-            transition: var(--transition);
-        }
-        .highlight-box h4 { color: var(--primary-dark); margin-bottom: 6px; font-size: 16px; }
-        .highlight-box ul { padding-left: 18px; }
-        .highlight-box li { margin-bottom: 5px; font-size: 14px; }
+.tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:500;margin:1px 2px;}
+.tag-red{background:#FDEDEC;color:#C0392B;}.tag-gold{background:#FEF9E7;color:#B7950B;}
+.tag-blue{background:#EBF5FB;color:#2980B9;}.tag-green{background:#E8F8F5;color:#1ABC9C;}
 
-        .tag {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 500;
-            margin: 2px 3px;
-        }
-        .tag-red { background: #FDEDEC; color: #C0392B; }
-        .tag-gold { background: #FEF9E7; color: #B7950B; }
-        .tag-blue { background: #EBF5FB; color: #2980B9; }
-        .tag-green { background: #E8F8F5; color: #1ABC9C; }
+.insight-icon{font-size:26px;margin-bottom:4px;}
+.insight-card{text-align:center;padding:18px 12px;background:var(--bg-card);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .2s;}
+.insight-card:hover{transform:translateY(-2px);}
+.insight-card h4{font-size:14px;margin-bottom:5px;}
+.insight-card p{font-size:12px;color:var(--text-light);}
 
-        .insight-icon { font-size: 28px; margin-bottom: 6px; }
-        .insight-card {
-            text-align: center;
-            padding: 20px 14px;
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .insight-card:hover { transform: translateY(-2px); }
-        .insight-card h4 { font-size: 15px; margin-bottom: 6px; }
-        .insight-card p { font-size: 13px; color: var(--text-light); }
+.comp-table{width:100%;border-collapse:collapse;font-size:12px;}
+.comp-table th{background:var(--primary-dark);color:#fff;padding:9px 10px;text-align:left;font-weight:500;}
+.comp-table th:first-child{border-radius:10px 0 0 0;}
+.comp-table th:last-child{border-radius:0 10px 0 0;}
+.comp-table td{padding:7px 10px;border-bottom:1px solid #f0f0f0;}
+.comp-table tr:hover td{background:#FFF8F0;}
 
-        .comp-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-        .comp-table th {
-            background: var(--primary-dark);
-            color: white;
-            padding: 10px 12px;
-            text-align: left;
-            font-weight: 500;
-        }
-        .comp-table th:first-child { border-radius: 10px 0 0 0; }
-        .comp-table th:last-child { border-radius: 0 10px 0 0; }
-        .comp-table td {
-            padding: 8px 12px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .comp-table tr:hover td { background: #FFF8F0; }
+.strategy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:768px){.strategy-grid{grid-template-columns:1fr}}
+.strategy-card{background:var(--bg-card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;border-top:4px solid var(--primary);transition:all .2s;}
+.strategy-card.gold{border-top-color:var(--secondary);}
+.strategy-card.blue{border-top-color:#2980B9;}
+.strategy-card.green{border-top-color:#27AE60;}
+.strategy-card h4{font-size:15px;margin-bottom:7px;}
+.strategy-card p,.strategy-card li{font-size:13px;color:var(--text);line-height:1.7;}
+.strategy-card ul{padding-left:15px;margin-top:5px;}
 
-        /* Strategy cards with linkage */
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            transition: var(--transition);
-        }
-        @media (max-width: 768px) { .strategy-grid { grid-template-columns: 1fr; } }
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:768px){.roadmap-grid{grid-template-columns:1fr}}
+.roadmap-phase{border-radius:12px;padding:12px;transition:transform .2s;}
+.roadmap-phase:hover{transform:translateY(-2px);}
 
-        .strategy-card {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 20px;
-            border-top: 4px solid var(--primary);
-            transition: var(--transition);
-        }
-        .strategy-card.gold { border-top-color: var(--secondary); }
-        .strategy-card.blue { border-top-color: #2980B9; }
-        .strategy-card.green { border-top-color: #27AE60; }
-        .strategy-card h4 { font-size: 16px; margin-bottom: 8px; }
-        .strategy-card p, .strategy-card li { font-size: 13px; color: var(--text); line-height: 1.7; }
-        .strategy-card ul { padding-left: 16px; margin-top: 6px; }
+.yushe-card{background:linear-gradient(135deg,#2C1810,#5D3A1A);color:#fff;margin-bottom:18px;}
 
-        /* ===== INSIGHT PANEL (联动结果区域) ===== */
-        .insight-panel {
-            background: linear-gradient(135deg, #2C1810, #5D3A1A);
-            color: white;
-            border-radius: var(--radius);
-            padding: 24px;
-            margin: 16px 0;
-            transition: var(--transition);
-        }
-        .insight-panel h4 {
-            color: var(--secondary);
-            font-size: 16px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .insight-panel .insight-content {
-            font-size: 14px;
-            line-height: 1.8;
-            min-height: 60px;
-            transition: var(--transition);
-        }
-        .insight-panel .insight-content strong { color: #FFD700; }
+.footer{background:var(--accent);color:rgba(255,255,255,.7);text-align:center;padding:24px 20px;font-size:13px;}
+.footer strong{color:#fff;}
 
-        /* Roadmap */
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-        @media (max-width: 768px) { .roadmap-grid { grid-template-columns: 1fr; } }
-        .roadmap-phase {
-            border-radius: 12px;
-            padding: 14px;
-            transition: var(--transition);
-        }
-        .roadmap-phase:hover { transform: translateY(-2px); }
+.fade-in{opacity:0;transform:translateY(20px);transition:all .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
 
-        .footer {
-            background: var(--accent);
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 28px 20px;
-            font-size: 13px;
-        }
-        .footer strong { color: white; }
+.scroll-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;background:var(--primary);color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;box-shadow:0 4px 16px rgba(192,57,43,.3);display:none;align-items:center;justify-content:center;z-index:99;}
+.scroll-top:hover{transform:scale(1.1);}
+.scroll-top.show{display:flex;}
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+.export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--secondary);color:#fff;border:none;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;transition:all .2s;font-family:inherit;}
+.export-btn:hover{background:#B7950B;transform:translateY(-1px);}
 
-        .scroll-top {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            width: 44px; height: 44px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            box-shadow: 0 4px 16px rgba(192,57,43,0.3);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 99;
-            transition: var(--transition);
-        }
-        .scroll-top:hover { transform: scale(1.1); }
-        .scroll-top.show { display: flex; }
-
-        /* Chart clickable hint */
-        .chart-click-hint {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            font-size: 11px;
-            color: var(--text-light);
-            opacity: 0.6;
-            pointer-events: none;
-        }
-        .chart-card { position: relative; }
-
-        @media (max-width: 600px) {
-            .container { padding: 0 12px; }
-            .card { padding: 16px; }
-            .nav a { padding: 10px 8px; font-size: 12px; }
-        }
-    </style>
+@media(max-width:600px){.container{padding:0 10px}.card{padding:14px}.nav a{padding:10px 7px;font-size:11px}}
+</style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="hero">
-    <div class="hero-content">
-        <div class="hero-badge">🔄 联动式决策工具 · 点击图表探索数据</div>
-        <h1>卤味行业决策参考报告</h1>
-        <p class="subtitle">行业全景 · 趋势洞察 · 榆社县经营策略 — 所有图表联动互驱</p>
-        <p class="location">
-            <span>📍 山西省晋中市榆社县</span>
-            <span>🏪 2家门店</span>
-            <span>📅 数据更新至2025年</span>
-        </p>
-    </div>
+  <div class="hero-content">
+    <div class="hero-badge">🧠 智能分析引擎 · 点哪分析哪</div>
+    <h1>卤味行业决策参考报告</h1>
+    <p class="subtitle">点击图表数据点 → 多选组合 → 实时生成分析结论 → 榆社县专属建议</p>
+    <p class="location">
+      <span>📍 山西晋中榆社县</span><span>🏪 2家门店</span><span>📅 数据至2025年</span>
+    </p>
+  </div>
 </header>
 
-<!-- Navigation -->
 <nav class="nav" id="topNav">
-    <a href="#overview" class="active">行业全景</a>
-    <a href="#history">发展历程</a>
-    <a href="#market">市场现状</a>
-    <a href="#consumer">消费画像</a>
-    <a href="#brands">竞争格局</a>
-    <a href="#future">未来趋势</a>
-    <a href="#strategy">经营策略</a>
+  <a href="#workbench" class="active">🎯 分析台</a>
+  <a href="#overview">📈 全景</a>
+  <a href="#history">📜 历程</a>
+  <a href="#market">🔍 市场</a>
+  <a href="#consumer">👥 消费</a>
+  <a href="#brands">🏆 竞争</a>
+  <a href="#future">🚀 趋势</a>
+  <a href="#strategy">🎯 策略</a>
 </nav>
 
 <div class="container">
 
-    <!-- ===== FILTER BAR ===== -->
-    <section style="padding-top:24px;">
-        <div class="filter-bar" id="filterBar">
-            <div class="filter-group">
-                <span class="filter-label">📍 区域视角</span>
-                <button class="filter-btn active" data-filter="region" data-value="all">全国</button>
-                <button class="filter-btn" data-filter="region" data-value="east">华东</button>
-                <button class="filter-btn" data-filter="region" data-value="central">华中</button>
-                <button class="filter-btn" data-filter="region" data-value="west">西南</button>
-            </div>
-            <div class="filter-divider"></div>
-            <div class="filter-group">
-                <span class="filter-label">🏙️ 城市层级</span>
-                <button class="filter-btn active" data-filter="tier" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="tier" data-value="t1">新一线</button>
-                <button class="filter-btn" data-filter="tier" data-value="t2">二线</button>
-                <button class="filter-btn" data-filter="tier" data-value="t3">三四五线</button>
-            </div>
-            <div class="filter-divider"></div>
-            <div class="filter-group">
-                <span class="filter-label">💰 消费区间</span>
-                <button class="filter-btn active" data-filter="price" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="price" data-value="low">平价 (<20元)</button>
-                <button class="filter-btn" data-filter="price" data-value="mid">主流 (20-30元)</button>
-                <button class="filter-btn" data-filter="price" data-value="high">品质 (30元+)</button>
-            </div>
-            <span class="filter-hint">👆 点击选择，所有图表联动更新</span>
-        </div>
+<!-- ===== 智能分析工作台 ===== -->
+<section id="workbench" style="padding-top:20px;">
+<div class="workbench" id="workbenchPanel">
+  <div class="workbench-header">
+    <h3>🧠 实时分析工作台</h3>
+    <span class="workbench-badge">点击图表 · 多选组合</span>
+  </div>
+  <div class="selection-area" id="selectionArea">
+    <span class="selection-empty">👇 在下方图表中点击数据点（可多选），这里会显示分析结果</span>
+  </div>
+  <div class="analysis-output" id="analysisOutput">
+    <strong>📊 默认视角：榆社县卤味经营分析</strong><br><br>
+    榆社县常住人口 <strong>10.9万</strong>，社会消费品零售总额 <strong>14.67亿</strong>，餐饮收入 <strong>1.97亿</strong>（增长6.8%）。<br>
+    作为三四五线下沉市场，全国卤味门店42.6%分布在此类城市，社区店+熟人经济模式优势明显。<br>
+    建议主力定价 <strong>20-30元</strong>，走"当天现做、不卖隔夜"的社区精品卤味路线。<br><br>
+    <em style="font-size:12px;opacity:.7;">💡 试试点击下方图表的数据点，比如点"三四五线"+价格"20-30元"，看看分析怎么变</em>
+  </div>
+  <button class="export-btn" onclick="copyAnalysis()">📋 复制分析结论</button>
+  <button class="export-btn" onclick="resetSelection()" style="background:#555;margin-left:8px;">🔄 重置选择</button>
+</div>
+</section>
 
-        <!-- Active filter tags -->
-        <div class="active-filters" id="activeFilters"></div>
+<!-- ===== 全景 ===== -->
+<section class="section" id="overview">
+  <div class="section-divider"></div>
+  <h2 class="section-title">📈 行业全景速览</h2>
+  <p class="section-subtitle">核心数据一览</p>
+  <div class="grid-4">
+    <div class="card" style="text-align:center"><div class="stat-number">1,573</div><div class="stat-label">2024市场规模（亿元）</div><div class="stat-sub">同比+3.7%</div></div>
+    <div class="card" style="text-align:center"><div class="stat-number">1,620</div><div class="stat-label">2025预计（亿元）</div><div class="stat-sub">增速不足3%</div></div>
+    <div class="card" style="text-align:center"><div class="stat-number">24万</div><div class="stat-label">全国门店</div><div class="stat-sub">截至2025年4月</div></div>
+    <div class="card" style="text-align:center"><div class="stat-number">76.7%</div><div class="stat-label">19-35岁消费者</div><div class="stat-sub">Z世代主力</div></div>
+  </div>
+</section>
 
-        <!-- Dynamic insight panel -->
-        <div class="insight-panel" id="insightPanel">
-            <h4>🧠 联动分析引擎 <span class="linkage-badge"><span class="dot"></span> 实时响应</span></h4>
-            <div class="insight-content" id="insightContent">
-                当前视角：<strong>全国卤味市场全景</strong>。<br>
-                点击上方筛选按钮或点击图表中的数据区块，其他图表和经营建议将<strong>自动联动更新</strong>。
-            </div>
-        </div>
-    </section>
+<!-- ===== 发展历程 ===== -->
+<section class="section" id="history">
+  <div class="section-divider"></div>
+  <h2 class="section-title">📜 发展历程</h2>
+  <p class="section-subtitle">从传统卤味到千亿赛道</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">~2017 · 传统时代</div><div class="timeline-text">夫妻店、路边摊为主，市场极度分散。绝味、周黑鸭开始连锁化扩张，行业复合增长率约8-10%。</div></div>
+        <div class="timeline-item"><div class="timeline-year">2018-2020 · 爆发期</div><div class="timeline-text">高速增长，复合增长率达<strong>12.3%</strong>。资本热捧，盛香亭等新品牌获亿元级融资。"休闲卤味"概念兴起，绝味门店破万家。</div></div>
+        <div class="timeline-item"><div class="timeline-year">2021-2022 · 调整期</div><div class="timeline-text">规模约<strong>3,000亿+</strong>。疫情冲击2022年下滑5.19%。社区卤味店逆势崛起，佐餐卤味需求增长。</div></div>
+        <div class="timeline-item"><div class="timeline-year">2023-2024 · 分化期</div><div class="timeline-text">增速从6.82%骤降至<strong>3.7%</strong>。绝味一年半关闭超4,000家门店，行业进入存量竞争。头部品牌从"开店竞赛"转向"单店效率"。</div></div>
+        <div class="timeline-item"><div class="timeline-year">2025-未来 · 存量期</div><div class="timeline-text">微增至<strong>1,620亿</strong>，增速不足3%。"小而美"社区店模式崛起，县城熟人经济+私域运营成为新方向。</div></div>
+      </div>
+    </div>
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 点击柱状图多选</div>
+      <div class="chart-title">市场规模历史演变（亿元）</div>
+      <div class="chart-wrapper"><canvas id="marketHistoryChart"></canvas></div>
+      <p style="font-size:11px;color:var(--text-light);text-align:center;">数据来源：红餐产业研究院、中研普华</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Section 1: 行业全景 -->
-    <section class="section" id="overview">
-        <div class="section-divider"></div>
-        <h2 class="section-title">📈 行业全景速览</h2>
-        <p class="section-subtitle">核心数据一览，快速把握行业脉搏</p>
+<!-- ===== 市场现状 ===== -->
+<section class="section" id="market">
+  <div class="section-divider"></div>
+  <h2 class="section-title">🔍 市场现状</h2>
+  <p class="section-subtitle">点击数据点多选，分析台自动生成结论</p>
+  <div class="grid-2">
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选区域</div>
+      <div class="chart-title">门店区域分布（%）</div>
+      <div class="chart-wrapper"><canvas id="regionChart"></canvas></div>
+    </div>
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选城市层级</div>
+      <div class="chart-title">各线级城市门店占比（%）</div>
+      <div class="chart-wrapper"><canvas id="cityTierChart"></canvas></div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选价位</div>
+      <div class="chart-title">人均消费区间分布（%）</div>
+      <div class="chart-wrapper"><canvas id="priceSegmentChart"></canvas></div>
+    </div>
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选价位</div>
+      <div class="chart-title">消费者可接受价位（%）</div>
+      <div class="chart-wrapper"><canvas id="acceptPriceChart"></canvas></div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid-4" id="overviewCards">
-            <div class="card" style="text-align:center">
-                <div class="stat-number" id="stat-size">1,573</div>
-                <div class="stat-label">2024年市场规模（亿元）</div>
-                <div class="stat-sub">同比增速 3.7%</div>
-            </div>
-            <div class="card" style="text-align:center">
-                <div class="stat-number" id="stat-expected">1,620</div>
-                <div class="stat-label">2025年预计规模（亿元）</div>
-                <div class="stat-sub">增速不足 3%</div>
-            </div>
-            <div class="card" style="text-align:center">
-                <div class="stat-number" id="stat-stores">24</div>
-                <div class="stat-label">全国卤味门店（万家）</div>
-                <div class="stat-sub" id="stat-stores-sub">截至2025年4月</div>
-            </div>
-            <div class="card" style="text-align:center">
-                <div class="stat-number" id="stat-youth">76.7</div>
-                <div class="stat-label">19-35岁消费者占比（%）</div>
-                <div class="stat-sub" id="stat-youth-sub">Z世代为主力</div>
-            </div>
-        </div>
-    </section>
+<!-- ===== 消费画像 ===== -->
+<section class="section" id="consumer">
+  <div class="section-divider"></div>
+  <h2 class="section-title">👥 消费画像</h2>
+  <p class="section-subtitle">消费者数据点击联动</p>
+  <div class="grid-3">
+    <div class="insight-card"><div class="insight-icon">🎯</div><h4>主力人群</h4><p><strong>19-35岁</strong> 占 <strong>76.7%</strong><br>Z世代是消费主力</p></div>
+    <div class="insight-card"><div class="insight-icon">🔄</div><h4>消费频次</h4><p><strong>40.9%</strong> 每月都吃<br><strong>48.4%</strong> 无固定频率</p></div>
+    <div class="insight-card"><div class="insight-icon">💰</div><h4>价格敏感度</h4><p>涨价10%以上<br><strong>47.2%</strong> 会减少购买</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选因素</div>
+      <div class="chart-title">消费者关注因素（%）</div>
+      <div class="chart-wrapper"><canvas id="concernChart"></canvas></div>
+    </div>
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选渠道</div>
+      <div class="chart-title">首选购买渠道（%）</div>
+      <div class="chart-wrapper"><canvas id="channelChart"></canvas></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Section 2: 发展历程 -->
-    <section class="section" id="history">
-        <div class="section-divider"></div>
-        <h2 class="section-title">📜 发展历程 <span class="linkage-badge"><span class="dot"></span> 联动区域</span></h2>
-        <p class="section-subtitle">点击时间线节点，查看对应时期的详细数据</p>
+<!-- ===== 竞争格局 ===== -->
+<section class="section" id="brands">
+  <div class="section-divider"></div>
+  <h2 class="section-title">🏆 竞争格局</h2>
+  <p class="section-subtitle">头部品牌分化，"小而美"逆势增长</p>
+  <div class="card" style="overflow-x:auto;">
+    <table class="comp-table">
+      <thead><tr><th>品牌</th><th>定位</th><th>门店规模</th><th>2025业绩</th><th>关键策略</th></tr></thead>
+      <tbody>
+        <tr><td><strong>绝味鸭脖</strong></td><td><span class="tag tag-red">休闲卤味</span></td><td>约10,713家（减4,000+）</td><td style="color:#E74C3C;">上市首亏</td><td>AI点单、年轻化IP</td></tr>
+        <tr><td><strong>周黑鸭</strong></td><td><span class="tag tag-red">休闲卤味</span></td><td>约2,864家（优化中）</td><td style="color:#27AE60;">净利增长228%</td><td>关低效店、创始人IP化</td></tr>
+        <tr><td><strong>煌上煌</strong></td><td><span class="tag tag-red">休闲卤味</span></td><td>关超700家非核心店</td><td style="color:#27AE60;">净利预增73-123%</td><td>多元化矩阵、聚焦核心</td></tr>
+        <tr><td><strong>紫燕百味鸡</strong></td><td><span class="tag tag-gold">佐餐卤味</span></td><td>社区店为主，数千家</td><td>稳健</td><td>社区菜场店型、出海</td></tr>
+        <tr><td><strong>社区小微店</strong></td><td><span class="tag tag-green">佐餐+热卤</span></td><td>1-5家个体经营</td><td>差异化生存</td><td>熟人经济、当天现做</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid-2">
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选</div>
+      <div class="chart-title">门店规模化程度（%）</div>
+      <div class="chart-wrapper"><canvas id="scaleChart"></canvas></div>
+    </div>
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选</div>
+      <div class="chart-title">上市公司营收对比（亿元）</div>
+      <div class="chart-wrapper"><canvas id="revenueChart"></canvas></div>
+    </div>
+  </div>
+</section>
 
-        <div class="grid-2">
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item" data-year="2017">
-                        <div class="timeline-year">~2017 · 传统时代</div>
-                        <div class="timeline-text">夫妻店、路边摊为主，市场分散。绝味、周黑鸭等开始连锁扩张。行业复合增长率约 <strong>8-10%</strong>。</div>
-                    </div>
-                    <div class="timeline-item" data-year="2020">
-                        <div class="timeline-year">2018-2020 · 爆发期</div>
-                        <div class="timeline-text">高速增长，复合增长率达 <strong>12.3%</strong>。资本热捧，新品牌获亿元级融资。"休闲卤味"概念兴起。</div>
-                    </div>
-                    <div class="timeline-item" data-year="2022">
-                        <div class="timeline-year">2021-2022 · 调整期</div>
-                        <div class="timeline-text">规模约 <strong>3,000亿+</strong>。疫情影响2022年下滑5.19%。社区卤味店逆势崛起，佐餐卤味需求增长。</div>
-                    </div>
-                    <div class="timeline-item" data-year="2024">
-                        <div class="timeline-year">2023-2024 · 分化期</div>
-                        <div class="timeline-text">增速从6.82%降至 <strong>3.7%</strong>。头部品牌承压，绝味门店减少超4,000家。行业进入存量竞争。</div>
-                    </div>
-                    <div class="timeline-item" data-year="2025">
-                        <div class="timeline-year">2025-未来 · 存量期</div>
-                        <div class="timeline-text">预计微增至 <strong>1,620亿</strong>，增速不足3%。从规模扩张转向单店效率竞争，"小而美"社区模式崛起。</div>
-                    </div>
-                </div>
-            </div>
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击柱状图筛选年份</div>
-                <div class="chart-title">市场规模历史演变（亿元）</div>
-                <div class="chart-wrapper">
-                    <canvas id="marketHistoryChart"></canvas>
-                </div>
-                <p style="font-size:12px;color:var(--text-light);text-align:center;margin-top:8px;">数据来源：红餐产业研究院、中研普华</p>
-            </div>
-        </div>
-    </section>
+<!-- ===== 未来趋势 ===== -->
+<section class="section" id="future">
+  <div class="section-divider"></div>
+  <h2 class="section-title">🚀 未来趋势</h2>
+  <p class="section-subtitle">点击数据点对比不同年份</p>
+  <div class="grid-2">
+    <div class="card chart-card">
+      <div class="chart-click-hint">💡 可多选年份对比</div>
+      <div class="chart-title">2025-2030 市场规模预测（亿元）</div>
+      <div class="chart-wrapper"><canvas id="futureChart"></canvas></div>
+    </div>
+    <div class="card">
+      <h4 style="margin-bottom:10px;">🔮 六大核心趋势</h4>
+      <div><span class="tag tag-red">热度</span> <strong>健康化升级</strong><p style="font-size:12px;color:var(--text-light);">低油低盐低糖，新鲜现做成核心竞争力</p></div>
+      <div style="margin-top:6px;"><span class="tag tag-gold">机会</span> <strong>"卤味+"跨界</strong><p style="font-size:12px;color:var(--text-light);">卤味+主食、卤味+饮品，拓展消费场景</p></div>
+      <div style="margin-top:6px;"><span class="tag tag-blue">趋势</span> <strong>社区店深耕</strong><p style="font-size:12px;color:var(--text-light);">"最后100米"门店抗风险能力更强</p></div>
+      <div style="margin-top:6px;"><span class="tag tag-green">潜力</span> <strong>下沉市场开发</strong><p style="font-size:12px;color:var(--text-light);">三四五线城市仍有大量空白</p></div>
+      <div style="margin-top:6px;"><span class="tag tag-red">必选</span> <strong>私域+线上</strong><p style="font-size:12px;color:var(--text-light);">微信群、社区团购最低成本触达</p></div>
+      <div style="margin-top:6px;"><span class="tag tag-gold">方向</span> <strong>地域风味差异化</strong><p style="font-size:12px;color:var(--text-light);">深挖地方特色口味突破同质化</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Section 3: 市场现状 -->
-    <section class="section" id="market">
-        <div class="section-divider"></div>
-        <h2 class="section-title">🔍 市场现状 <span class="linkage-badge"><span class="dot"></span> 联动区域</span></h2>
-        <p class="section-subtitle">点击图表互动探索 — 选中区域后其他图表和策略自动更新</p>
+<!-- ===== 策略 ===== -->
+<section class="section" id="strategy">
+  <div class="section-divider"></div>
+  <h2 class="section-title">🎯 榆社县经营策略</h2>
+  <p class="section-subtitle">结合行业数据 + 本地实际情况</p>
 
-        <div class="grid-2">
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击扇形联动</div>
-                <div class="chart-title">门店区域分布（点击查看区域详情）</div>
-                <div class="chart-wrapper">
-                    <canvas id="regionChart"></canvas>
-                </div>
-            </div>
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击柱子联动</div>
-                <div class="chart-title">各线级城市门店占比（点击筛选）</div>
-                <div class="chart-wrapper">
-                    <canvas id="cityTierChart"></canvas>
-                </div>
-            </div>
-        </div>
+  <div class="card yushe-card">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div><h4 style="color:var(--secondary);margin-bottom:8px;">📍 榆社县本地</h4><p style="font-size:13px;opacity:.9;">常住 <strong style="color:#fff;">10.9万</strong> 人 | 户籍 <strong style="color:#fff;">14.1万</strong></p><p style="font-size:13px;opacity:.9;">城镇人均收入 <strong style="color:#fff;">31,975</strong> 元/年</p><p style="font-size:13px;opacity:.9;">农村人均收入 <strong style="color:#fff;">11,362</strong> 元/年</p></div>
+      <div><h4 style="color:var(--secondary);margin-bottom:8px;">📊 消费市场</h4><p style="font-size:13px;opacity:.9;">社消总额 <strong style="color:#fff;">14.67亿</strong> | 餐饮 <strong style="color:#fff;">1.97亿</strong></p><p style="font-size:13px;opacity:.9;">消费增长 <strong style="color:#2ECC71;">+8.7%</strong></p><p style="font-size:13px;opacity:.9;">城镇消费占 <strong style="color:#fff;">76.7%</strong></p></div>
+    </div>
+  </div>
 
-        <div class="grid-2">
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击柱子联动</div>
-                <div class="chart-title">人均消费区间分布（点击查看趋势）</div>
-                <div class="chart-wrapper">
-                    <canvas id="priceSegmentChart"></canvas>
-                </div>
-            </div>
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击扇形联动</div>
-                <div class="chart-title">消费者可接受价位（点击筛选）</div>
-                <div class="chart-wrapper">
-                    <canvas id="acceptPriceChart"></canvas>
-                </div>
-            </div>
-        </div>
+  <div class="strategy-grid">
+    <div class="strategy-card"><h4>🥩 产品策略 · "三款定江山"</h4><ul><li><strong>引流款（30%）：</strong>9.9元卤粉/10元3个鸭脖</li><li><strong>利润款（40%）：</strong>秘制藤椒鸭、脱骨牛蹄筋</li><li><strong>口碑款（30%）：</strong>三代老卤炖牛肉</li><li><strong>SKU控制在12-15个</strong>，避免库存积压</li><li><strong>当天现做、当晚清空</strong></li></ul></div>
+    <div class="strategy-card gold"><h4>💰 定价 · "县城友好价"</h4><ul><li>主力 <strong>20-30元</strong>，匹配县城消费</li><li>设 <strong>15元以下小份装</strong> 降低门槛</li><li>推出 <strong>"荤素1+1"套餐</strong></li><li>明码标价，避免"卤味刺客"</li><li>每周 <strong>会员日折扣</strong></li></ul></div>
+    <div class="strategy-card blue"><h4>📍 选址策略</h4><ul><li><strong>社区店 > 商业街</strong></li><li>优先 <strong>菜市场口、小区门口、学校旁</strong></li><li>两店 <strong>东西/南北互补布点</strong></li><li><strong>佐餐定位</strong> > 休闲零食</li><li>关注城郊新建小区</li></ul></div>
+    <div class="strategy-card green"><h4>📱 运营 · "私域三板斧"</h4><ul><li><strong>微信群：</strong>每店1个群，每日推送</li><li><strong>预售+自提：</strong>群内接龙预订</li><li><strong>短视频：</strong>抖音同城拍制卤过程</li><li><strong>老客带新：</strong>推荐双方各减5元</li><li><strong>节庆营销：</strong>庙会限定套餐</li></ul></div>
+  </div>
 
-        <div class="highlight-box" id="marketInsight">
-            <h4>💡 当前视角洞察</h4>
-            <ul id="marketInsightList">
-                <li><strong>区域优势：</strong>下沉市场（三线及以下）门店占比达42.6%，低线城市是重要阵地</li>
-                <li><strong>价格定位：</strong>超七成消费者接受单次消费20-30元，小店应主打高性价比</li>
-                <li><strong>社区属性：</strong>佐餐卤味偏向社区店消费，县城熟人经济下社区店更具优势</li>
-                <li><strong>门店规模：</strong>85.6%的卤味品牌门店不足50家，小规模经营仍是主流</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Section 4: 消费画像 -->
-    <section class="section" id="consumer">
-        <div class="section-divider"></div>
-        <h2 class="section-title">👥 消费画像 <span class="linkage-badge"><span class="dot"></span> 联动区域</span></h2>
-        <p class="section-subtitle">消费群体数据会根据上方筛选条件联动变化</p>
-
-        <div class="grid-3" id="consumerCards">
-            <div class="insight-card">
-                <div class="insight-icon">🎯</div>
-                <h4>主力人群</h4>
-                <p><strong id="cons-age">19-35岁</strong> 占 <strong id="cons-age-pct">76.7%</strong><br>Z世代是消费主力</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">🔄</div>
-                <h4>消费频次</h4>
-                <p><strong id="cons-freq">40.9%</strong> 每月都吃<br><strong id="cons-freq2">48.4%</strong> 无固定频率</p>
-            </div>
-            <div class="insight-card">
-                <div class="insight-icon">💰</div>
-                <h4>价格敏感度</h4>
-                <p>涨价10%以上<br><strong id="cons-sense">47.2%</strong> 会减少购买</p>
-            </div>
-        </div>
-
-        <div class="grid-2">
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击条形联动</div>
-                <div class="chart-title">消费者关注因素（点击查看详情）</div>
-                <div class="chart-wrapper">
-                    <canvas id="concernChart"></canvas>
-                </div>
-            </div>
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击扇形联动</div>
-                <div class="chart-title">首选购买渠道</div>
-                <div class="chart-wrapper">
-                    <canvas id="channelChart"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="highlight-box" id="consumerInsight" style="border-left-color:#C0392B;">
-            <h4>⚠️ 消费者减少购买的主要原因</h4>
-            <ul id="consumerDeclineList">
-                <li><strong>口味重，不符合健康需求</strong> — 需开发低油低盐产品</li>
-                <li><strong>重复产品吃腻了，新品太少</strong> — 需要持续上新</li>
-                <li><strong>价格过高（"卤味刺客"）</strong> — 定价须合理</li>
-            </ul>
-            <p style="margin-top:8px;font-size:14px;">✅ <strong>好消息：</strong>51.7%消费者近一年购买频次无明显变化，消费群体高度稳定。</p>
-        </div>
-    </section>
-
-    <!-- Section 5: 竞争格局 -->
-    <section class="section" id="brands">
-        <div class="section-divider"></div>
-        <h2 class="section-title">🏆 竞争格局 <span class="linkage-badge"><span class="dot"></span> 联动区域</span></h2>
-        <p class="section-subtitle">头部品牌分化明显，"小而美"路线逆势增长</p>
-
-        <div class="card" style="overflow-x:auto;">
-            <table class="comp-table">
-                <thead>
-                    <tr>
-                        <th>品牌</th>
-                        <th>定位</th>
-                        <th>门店规模</th>
-                        <th>2025年业绩</th>
-                        <th>关键策略</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>绝味鸭脖</strong></td>
-                        <td><span class="tag tag-red">休闲卤味</span></td>
-                        <td>约10,713家（减4,000+）</td>
-                        <td style="color:#E74C3C;">上市首亏</td>
-                        <td>AI点单、年轻化IP</td>
-                    </tr>
-                    <tr>
-                        <td><strong>周黑鸭</strong></td>
-                        <td><span class="tag tag-red">休闲卤味</span></td>
-                        <td>约2,864家（优化中）</td>
-                        <td style="color:#27AE60;">净利增长228%</td>
-                        <td>关低效店、创始人IP化</td>
-                    </tr>
-                    <tr>
-                        <td><strong>煌上煌</strong></td>
-                        <td><span class="tag tag-red">休闲卤味</span></td>
-                        <td>关超700家非核心店</td>
-                        <td style="color:#27AE60;">净利预增73-123%</td>
-                        <td>多元化矩阵、聚焦核心</td>
-                    </tr>
-                    <tr>
-                        <td><strong>紫燕百味鸡</strong></td>
-                        <td><span class="tag tag-gold">佐餐卤味</span></td>
-                        <td>社区店为主，数千家</td>
-                        <td>稳健</td>
-                        <td>社区菜场店型、出海</td>
-                    </tr>
-                    <tr>
-                        <td><strong>社区小微店</strong></td>
-                        <td><span class="tag tag-green">佐餐+热卤</span></td>
-                        <td>1-5家个体经营</td>
-                        <td>差异化生存</td>
-                        <td>熟人经济、当天现做</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="grid-2">
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击扇形联动</div>
-                <div class="chart-title">门店规模化程度</div>
-                <div class="chart-wrapper">
-                    <canvas id="scaleChart"></canvas>
-                </div>
-            </div>
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击柱子联动</div>
-                <div class="chart-title">上市公司营收对比（亿元）</div>
-                <div class="chart-wrapper">
-                    <canvas id="revenueChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 6: 未来趋势 -->
-    <section class="section" id="future">
-        <div class="section-divider"></div>
-        <h2 class="section-title">🚀 未来趋势 <span class="linkage-badge"><span class="dot"></span> 联动区域</span></h2>
-        <p class="section-subtitle">点击趋势图中的数据点，查看对应年份的策略建议</p>
-
-        <div class="grid-2">
-            <div class="card chart-card">
-                <div class="chart-click-hint">💡 点击数据点查看该年策略</div>
-                <div class="chart-title">2025-2030 市场规模预测（亿元）</div>
-                <div class="chart-wrapper">
-                    <canvas id="futureChart"></canvas>
-                </div>
-            </div>
-            <div class="card" id="trendDetailCard">
-                <h4 style="margin-bottom:12px;">🔮 核心趋势速览</h4>
-                <div class="trend-item">
-                    <span class="tag tag-red">热度</span>
-                    <strong>健康化升级</strong>
-                    <p style="font-size:13px;color:var(--text-light);">低油低盐低糖，新鲜现做成核心竞争力</p>
-                </div>
-                <div class="trend-item" style="margin-top:8px;">
-                    <span class="tag tag-gold">机会</span>
-                    <strong>"卤味+"跨界融合</strong>
-                    <p style="font-size:13px;color:var(--text-light);">卤味+主食、卤味+饮品，拓展消费场景</p>
-                </div>
-                <div class="trend-item" style="margin-top:8px;">
-                    <span class="tag tag-blue">趋势</span>
-                    <strong>社区店深耕</strong>
-                    <p style="font-size:13px;color:var(--text-light);">贴近社区的"最后100米"更具抗风险能力</p>
-                </div>
-                <div class="trend-item" style="margin-top:8px;">
-                    <span class="tag tag-green">潜力</span>
-                    <strong>下沉市场开发</strong>
-                    <p style="font-size:13px;color:var(--text-light);">三四五线城市仍有大量空白市场</p>
-                </div>
-                <div class="trend-item" style="margin-top:8px;">
-                    <span class="tag tag-red">必选</span>
-                    <strong>私域+线上运营</strong>
-                    <p style="font-size:13px;color:var(--text-light);">微信群、社区团购最低成本触达顾客</p>
-                </div>
-                <div class="trend-item" style="margin-top:8px;">
-                    <span class="tag tag-gold">方向</span>
-                    <strong>地域风味差异化</strong>
-                    <p style="font-size:13px;color:var(--text-light);">深挖地方特色口味，突破同质化</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 7: 经营策略（联动核心） -->
-    <section class="section" id="strategy">
-        <div class="section-divider"></div>
-        <h2 class="section-title">🎯 榆社县专属策略 <span class="linkage-badge"><span class="dot"></span> 随筛选联动更新</span></h2>
-        <p class="section-subtitle">策略内容会根据你选择的区域/城市层级/价格区间自动调整</p>
-
-        <!-- Yushé card -->
-        <div class="card" style="background:linear-gradient(135deg, #2C1810, #5D3A1A);color:white;margin-bottom:20px;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                <div>
-                    <h4 style="color:var(--secondary);margin-bottom:10px;">📍 榆社县本地画像</h4>
-                    <p style="font-size:14px;opacity:0.9;">常住人口 <strong style="color:white;">10.9万</strong> | 户籍 <strong style="color:white;">14.1万</strong></p>
-                    <p style="font-size:14px;opacity:0.9;">城镇人均可支配收入 <strong style="color:white;">31,975</strong> 元/年</p>
-                    <p style="font-size:14px;opacity:0.9;">农村人均可支配收入 <strong style="color:white;">11,362</strong> 元/年</p>
-                </div>
-                <div>
-                    <h4 style="color:var(--secondary);margin-bottom:10px;">📊 本地消费市场</h4>
-                    <p style="font-size:14px;opacity:0.9;">社消总额 <strong style="color:white;">14.67亿</strong> | 餐饮 <strong style="color:white;">1.97亿</strong></p>
-                    <p style="font-size:14px;opacity:0.9;">消费增长 <strong style="color:#2ECC71;">+8.7%</strong>（高于全国）</p>
-                    <p style="font-size:14px;opacity:0.9;">城镇消费占 <strong style="color:white;">76.7%</strong></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="strategy-grid" id="strategyGrid">
-            <div class="strategy-card">
-                <h4>🥩 产品策略 · "三款定江山"</h4>
-                <ul id="strategy-product">
-                    <li><strong>引流款（占30%）：</strong>9.9元卤粉/10元3个鸭脖等爆品</li>
-                    <li><strong>利润款（占40%）：</strong>秘制藤椒鸭、脱骨牛蹄筋等高毛利产品</li>
-                    <li><strong>口碑款（占30%）：</strong>三代老卤炖牛肉等招牌菜</li>
-                    <li><strong>SKU控制在12-15个</strong>，避免库存积压</li>
-                    <li><strong>当天现做、当晚清空</strong>，用新鲜感建立信任</li>
-                </ul>
-            </div>
-            <div class="strategy-card gold">
-                <h4>💰 定价策略 · "县城友好价"</h4>
-                <ul id="strategy-price">
-                    <li><strong>主力价位定在20-30元</strong>，匹配县城消费能力</li>
-                    <li>设置 <strong>15元以下小份装</strong>，降低尝试门槛</li>
-                    <li>推出 <strong>"荤素1+1"套餐</strong>，提升客单价</li>
-                    <li><strong>明码标价，分量透明</strong>，避免"卤味刺客"</li>
-                    <li>设计 <strong>会员日折扣</strong>，养成固定消费习惯</li>
-                </ul>
-            </div>
-            <div class="strategy-card blue">
-                <h4>📍 选址与场景策略</h4>
-                <ul id="strategy-location">
-                    <li><strong>社区店 > 商业街</strong>，贴近日常消费场景</li>
-                    <li>优先选择 <strong>菜市场附近、大型小区门口、学校周边</strong></li>
-                    <li>两个门店形成 <strong>互补布点</strong>，覆盖全城</li>
-                    <li>一店可布局 <strong>城郊新建小区</strong>周边</li>
-                    <li><strong>佐餐定位</strong> > 休闲零食，更契合县城习惯</li>
-                </ul>
-            </div>
-            <div class="strategy-card green">
-                <h4>📱 运营策略 · "县城私域三板斧"</h4>
-                <ul id="strategy-ops">
-                    <li><strong>微信群运营：</strong>每店建1个群，每日推送今日卤味</li>
-                    <li><strong>预售+自提：</strong>群内接龙预订，减少备货浪费</li>
-                    <li><strong>短视频推广：</strong>拍制卤过程在抖音同城推广</li>
-                    <li><strong>老客带新：</strong>推荐新客双方各减5元</li>
-                    <li><strong>节庆营销：</strong>结合榆社庙会做限定套餐</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Roadmap -->
-        <div class="card" style="margin-top:20px;">
-            <h4 style="font-size:17px;margin-bottom:14px;">🗺️ 90天行动路线图</h4>
-            <div class="roadmap-grid">
-                <div class="roadmap-phase" style="background:#FDEDEC;">
-                    <div style="font-size:12px;color:#C0392B;font-weight:700;">第1-30天 · 筑基期</div>
-                    <ul style="font-size:13px;padding-left:16px;margin-top:6px;">
-                        <li>优化产品结构，确定"三款"</li>
-                        <li>建立微信群，积累初始客户</li>
-                        <li>统一门店视觉和品牌形象</li>
-                        <li>定价调整，设置引流款</li>
-                    </ul>
-                </div>
-                <div class="roadmap-phase" style="background:#FEF9E7;">
-                    <div style="font-size:12px;color:#B7950B;font-weight:700;">第31-60天 · 增长期</div>
-                    <ul style="font-size:13px;padding-left:16px;margin-top:6px;">
-                        <li>启动老客带新优惠活动</li>
-                        <li>开始短视频同城推广</li>
-                        <li>开设会员日培养固定消费</li>
-                        <li>引入1-2款季节限定新品</li>
-                    </ul>
-                </div>
-                <div class="roadmap-phase" style="background:#E8F8F5;">
-                    <div style="font-size:12px;color:#1ABC9C;font-weight:700;">第61-90天 · 巩固期</div>
-                    <ul style="font-size:13px;padding-left:16px;margin-top:6px;">
-                        <li>评估两个门店经营数据</li>
-                        <li>优化SKU，淘汰动销差产品</li>
-                        <li>考虑上线外卖平台</li>
-                        <li>尝试与本地餐饮店合作供货</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Risk -->
-        <div class="highlight-box" style="border-left-color:#E74C3C;background:linear-gradient(135deg, #FFF5F5, #FFF0F0);">
-            <h4 style="color:#C0392B;">⚠️ 避坑指南</h4>
-            <ul>
-                <li><strong>不要盲目加盟大品牌</strong> — 加盟费超10万，且总部战略收缩中</li>
-                <li><strong>不要追求SKU大而全</strong> — 12-15个核心产品足够</li>
-                <li><strong>不要硬拼低价</strong> — 核心竞争力是品质+新鲜+人情味</li>
-                <li><strong>不要忽视线上</strong> — 微信群私域运营带来稳定复购</li>
-                <li><strong>不要跟风涨价</strong> — 47%消费者会因涨价10%+减少购买</li>
-            </ul>
-        </div>
-    </section>
+  <div class="card" style="margin-top:16px;">
+    <h4 style="font-size:16px;margin-bottom:12px;">🗺️ 90天行动路线图</h4>
+    <div class="roadmap-grid">
+      <div class="roadmap-phase" style="background:#FDEDEC;"><div style="font-size:11px;color:#C0392B;font-weight:700;">第1-30天 · 筑基</div><ul style="font-size:12px;padding-left:14px;margin-top:4px;"><li>优化产品结构</li><li>建微信群积累客户</li><li>统一门店视觉</li><li>定价调整</li></ul></div>
+      <div class="roadmap-phase" style="background:#FEF9E7;"><div style="font-size:11px;color:#B7950B;font-weight:700;">第31-60天 · 增长</div><ul style="font-size:12px;padding-left:14px;margin-top:4px;"><li>老客带新活动</li><li>短视频同城推广</li><li>会员日养成习惯</li><li>季节限定新品</li></ul></div>
+      <div class="roadmap-phase" style="background:#E8F8F5;"><div style="font-size:11px;color:#1ABC9C;font-weight:700;">第61-90天 · 巩固</div><ul style="font-size:12px;padding-left:14px;margin-top:4px;"><li>评估两店数据</li><li>优化SKU</li><li>上线外卖平台</li><li>本地合作供货</li></ul></div>
+    </div>
+  </div>
+</section>
 
 </div>
 
 <footer class="footer">
-    <p style="max-width:700px;margin:0 auto;">
-        本报告基于红餐产业研究院《卤味品类发展报告2025》、中研普华产业研究院、榆社县2025年统计公报等公开数据整理。<br>
-        数据截至 <strong>2025年/2026年初</strong>，仅供经营决策参考。<br><br>
-        🏪 祝榆社县的两家卤味店生意兴隆，香飘太行！
-    </p>
+  <p>本报告基于红餐产业研究院、中研普华、榆社县统计公报等公开数据。<br>数据截至 <strong>2025年/2026年初</strong>，仅供经营决策参考。<br>🏪 祝榆社县卤味店生意兴隆，香飘太行！</p>
 </footer>
 
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <script>
-// ===== Chart.js defaults =====
-Chart.defaults.font.family = "'Noto Sans SC', sans-serif";
-Chart.defaults.font.size = 12;
+Chart.defaults.font.family="'Noto Sans SC',sans-serif";
+Chart.defaults.font.size=11;
 Chart.register(ChartDataLabels);
 
-const COLORS = ['#C0392B','#D4A017','#2980B9','#27AE60','#8E44AD','#E67E22','#1ABC9C','#95A5A6'];
-const COLORS_ACTIVE = ['rgba(192,57,43,0.9)','rgba(212,160,23,0.9)','rgba(41,128,185,0.9)','rgba(39,174,96,0.9)','rgba(142,68,173,0.9)'];
-const COLORS_INACTIVE = ['rgba(192,57,43,0.2)','rgba(212,160,23,0.2)','rgba(41,128,185,0.2)','rgba(39,174,96,0.2)','rgba(142,68,173,0.2)'];
+const COLORS=['#C0392B','#D4A017','#2980B9','#27AE60','#8E44AD','#E67E22','#1ABC9C','#95A5A6'];
+const COLORS_HL=['rgba(192,57,43,0.95)','rgba(212,160,23,0.95)','rgba(41,128,185,0.95)','rgba(39,174,96,0.95)','rgba(142,68,173,0.95)','rgba(230,126,34,0.95)','rgba(26,188,156,0.95)','rgba(149,165,166,0.95)'];
 
-// ===== STATE =====
-const state = {
-    region: 'all',
-    tier: 'all',
-    price: 'all',
-    highlight: {
-        regionIdx: -1,
-        tierIdx: -1,
-        priceSegIdx: -1,
-        acceptIdx: -1,
-        concernIdx: -1,
-        channelIdx: -1,
-        futureYear: -1,
-    }
-};
+// ===== 多选状态管理 =====
+const selection={region:[],tier:[],price:[],priceSeg:[],accept:[],concern:[],channel:[],scale:[],revenue:[],future:[]};
+const chartInstances={};
 
-const D = {
-    regions: ['华东', '华中', '西南', '华南', '华北', '其他'],
-    regionData: [34.0, 15.4, 13.7, 12.5, 11.0, 13.4],
-    tiers: ['新一线', '二线', '三线', '四线', '五线及以下'],
-    tierData: [25.7, 21.6, 18.3, 14.2, 10.1],
-    priceLabels: ['20元以下', '20-25元', '25-35元', '35元及以上'],
-    priceData23: [16, 18, 33, 33],
-    priceData25: [20, 21.1, 29.5, 29.4],
-    acceptLabels: ['20-30元', '15-20元', '30-40元', '40-60元', '60元+'],
-    acceptData: [42.7, 22, 16.5, 10.9, 7.9],
-    concernLabels: ['食品安全', '口味/味道', '价格/性价比', '品牌口碑', '促销活动', '包装便利'],
-    concernData: [88, 82, 71, 55, 42, 30],
-    channelLabels: ['连锁品牌店', '个体店/摊', '路边摊/菜市', '线上外卖', '商超便利店'],
-    channelData: [33.7, 28, 17, 13, 8.3],
-    futureLabels: ['2023', '2024', '2025E', '2026E', '2027E', '2028E', '2029E', '2030E'],
-    futureData: [3180, 1573, 1620, 1670, 1730, 1800, 1880, 1960],
-    scaleLabels: ['50家及以下', '50-200家', '200-500家', '500家以上'],
-    scaleData: [85.6, 8.2, 4.8, 1.4],
-    revenueLabels: ['绝味食品', '周黑鸭', '煌上煌'],
-    revenueData: [55.6, 24.2, 17.3],
-};
-
-// ===== FILTER INSIGHTS (联动分析文本) =====
-const insights = {
-    all_all_all: {
-        title: '全国卤味市场全景',
-        desc: '当前无筛选条件。点击上方按钮或图表中的数据区块，经营策略将自动联动更新。'
-    },
-    region_east: {
-        title: '华东市场视角',
-        desc: '华东门店占比<strong>34%</strong>，是全国最大市场。社区品牌如紫燕百味鸡、卤江南在这里扎根。榆社县经营者可借鉴华东品牌的<strong>社区深耕+标准化出品</strong>模式。'
-    },
-    region_central: {
-        title: '华中市场视角',
-        desc: '华中门店占比<strong>15.4%</strong>，绝味、周黑鸭均发源于此。本地卤味文化深厚，消费者对传统口味忠诚度高。建议<strong>强化"老卤"概念</strong>，打出传统工艺牌。'
-    },
-    region_west: {
-        title: '西南市场视角',
-        desc: '西南门店占比<strong>13.7%</strong>，以辣味卤食为主。重庆门店密度全国第一。启示：<strong>辣味是年轻人最爱</strong>，可将"敢辣"作为品牌特色。'
-    },
-    tier_t1: {
-        title: '新一线城市视角',
-        desc: '新一线门店占比<strong>25.7%</strong>，竞争最激烈。人均消费25-35元为主。对榆社的启示：<strong>不要照搬大城市模式</strong>，县城应当走性价比+人情味路线。'
-    },
-    tier_t2: {
-        title: '二线城市视角',
-        desc: '二线门店占比<strong>21.6%</strong>。消费者兼顾品质与价格。启示：<strong>适当提高产品品质感</strong>，同时保持价格亲民。'
-    },
-    tier_t3: {
-        title: '三四五线城市视角',
-        desc: '下沉市场合计占比<strong>42.6%</strong>！这是<strong>榆社县最直接的参照系</strong>。社区店+熟人经济模式在下沉市场韧性最强，小店靠品质和人情味完全可以与大品牌抗衡。'
-    },
-    price_low: {
-        title: '平价消费视角',
-        desc: '选择平价区间。20元以下门店占比从16%升至20%，消费降级趋势明显。建议：<strong>保留充足的平价产品线</strong>，用低价引流款带动人气。'
-    },
-    price_mid: {
-        title: '主流消费视角',
-        desc: '20-30元是<strong>42.7%消费者最能接受的价格带</strong>。这正是县城卤味店的黄金价格带，应作为主力产品定价区间。'
-    },
-    price_high: {
-        title: '品质消费视角',
-        desc: '30元以上区间仍有<strong>7.9%</strong>消费者愿意买单（注重品质而非价格）。可针对这部分客群推出<strong>精品卤味礼盒</strong>，提升客单价。'
-    }
-};
-
-function getInsightKey() {
-    return state.region + '_' + state.tier + '_' + state.price;
-}
-function getInsight(key) {
-    return insights[key] || insights.all_all_all;
+function toggleSelection(cat,val,label){
+  const idx=selection[cat].findIndex(s=>s.val===val);
+  if(idx>=0) selection[cat].splice(idx,1);
+  else selection[cat].push({val,label});
+  updateAll();
 }
 
-function updateInsight() {
-    const key = getInsightKey();
-    const ins = getInsight(key);
-    document.getElementById('insightContent').innerHTML =
-        '当前视角：<strong>' + ins.title + '</strong>。<br>' + ins.desc;
-
-    // Update market highlight box
-    const list = document.getElementById('marketInsightList');
-    const items = {
-        all_all_all: [
-            '<strong>区域优势：</strong>下沉市场门店占比达42.6%，低线城市是重要阵地',
-            '<strong>价格定位：</strong>超七成消费者接受20-30元，小店应主打高性价比',
-            '<strong>社区属性：</strong>佐餐卤味偏向社区店，县城熟人经济更具优势',
-            '<strong>门店规模：</strong>85.6%品牌门店不足50家，小规模经营是主流',
-        ],
-        region_east: [
-            '<strong>华东启示：</strong>品牌社区化程度高，可借鉴标准化出品流程',
-            '<strong>品类参考：</strong>卤江南等佐餐品牌以"当天现做"为卖点',
-            '<strong>学习点：</strong>注重门店卫生和品牌视觉标准化',
-        ],
-        region_central: [
-            '<strong>华中启示：</strong>传统卤味文化深厚，适合打"老卤传承"牌',
-            '<strong>品类参考：</strong>绝味以辣取胜，周黑鸭以甜辣差异化',
-            '<strong>学习点：</strong>口味上可适当加重，迎合北方口味偏好',
-        ],
-        region_west: [
-            '<strong>西南启示：</strong>辣味经济崛起，辣味卤食消费频次最高',
-            '<strong>品类参考：</strong>可开发麻辣/藤椒等辣味产品线',
-            '<strong>学习点：</strong>"敢辣"标签能吸引年轻消费者',
-        ],
-        tier_t3: [
-            '<strong>下沉市场核心策略：</strong>社区店+熟人经济',
-            '<strong>价格锚点：</strong>主力产品定价20-30元',
-            '<strong>关键动作：</strong>微信群私域运营，用熟人网络裂变',
-            '<strong>差异化：</strong>当天现做不隔夜，超越预包装零食',
-        ],
-        price_mid: [
-            '<strong>黄金价格带：</strong>20-30元是最大公约数',
-            '<strong>产品结构：</strong>70%产品落在这个区间',
-            '<strong>套餐设计：</strong>"一小份荤+一小份素"组合定价',
-        ],
-    };
-    const chosen = items[key] || items.all_all_all;
-    list.innerHTML = chosen.map(i => '<li>' + i + '</li>').join('');
-
-    // Update active filter tags
-    const tags = [];
-    if (state.region !== 'all') {
-        const names = { east: '华东', central: '华中', west: '西南' };
-        tags.push({ key: 'region', label: '区域: ' + (names[state.region] || state.region) });
-    }
-    if (state.tier !== 'all') {
-        const names = { t1: '新一线', t2: '二线', t3: '三四五线' };
-        tags.push({ key: 'tier', label: '城市: ' + (names[state.tier] || state.tier) });
-    }
-    if (state.price !== 'all') {
-        const names = { low: '平价', mid: '主流', high: '品质' };
-        tags.push({ key: 'price', label: '价位: ' + (names[state.price] || state.price) });
-    }
-    const container = document.getElementById('activeFilters');
-    if (tags.length === 0) {
-        container.innerHTML = '';
-    } else {
-        container.innerHTML = tags.map(t =>
-            `<span class="active-filter-tag">${t.label} <span class="clear" data-clear="${t.key}">✕</span></span>`
-        ).join('');
-        container.querySelectorAll('[data-clear]').forEach(el => {
-            el.addEventListener('click', function() {
-                state[this.dataset.clear] = 'all';
-                syncFiltersFromState();
-                updateAll();
-            });
-        });
-    }
-
-    // Update consumer cards based on filter
-    if (state.tier === 't3' || state.region !== 'all') {
-        document.getElementById('cons-age').textContent = '25-45岁';
-        document.getElementById('cons-age-pct').textContent = '68.2%';
-        document.getElementById('cons-freq').textContent = '45.6%';
-        document.getElementById('cons-freq2').textContent = '42.1%';
-        document.getElementById('cons-sense').textContent = '51.3%';
-    } else {
-        document.getElementById('cons-age').textContent = '19-35岁';
-        document.getElementById('cons-age-pct').textContent = '76.7%';
-        document.getElementById('cons-freq').textContent = '40.9%';
-        document.getElementById('cons-freq2').textContent = '48.4%';
-        document.getElementById('cons-sense').textContent = '47.2%';
-    }
-
-    // Update strategy based on filters
-    updateStrategy();
+function resetSelection(){
+  Object.keys(selection).forEach(k=>selection[k]=[]);
+  updateAll();
 }
 
-// ===== UPDATE STRATEGY (联动策略) =====
-function updateStrategy() {
-    const t3 = state.tier === 't3';
-    const lowPrice = state.price === 'low';
-    const midPrice = state.price === 'mid';
-
-    // Product strategy
-    const prod = document.getElementById('strategy-product');
-    if (t3 || midPrice) {
-        prod.innerHTML = `
-            <li><strong>引流款（占30%）：</strong>9.9元卤粉/10元3个鸭脖，主打"好吃不贵"</li>
-            <li><strong>利润款（占40%）：</strong>秘制藤椒鸭、脱骨牛蹄筋等独家产品</li>
-            <li><strong>口碑款（占30%）：</strong>三代老卤炖牛肉，打造"榆社必吃"标签</li>
-            <li><strong>SKU严控12个内</strong>，每周轮换2-3款时令产品保持新鲜感</li>
-            <li><strong>当天现做、当晚清空</strong>，绝不卖隔夜货</li>
-        `;
-    } else {
-        prod.innerHTML = `
-            <li><strong>引流款（占30%）：</strong>9.9元卤粉/10元3个鸭脖等爆品</li>
-            <li><strong>利润款（占40%）：</strong>秘制藤椒鸭、脱骨牛蹄筋等高毛利产品</li>
-            <li><strong>口碑款（占30%）：</strong>三代老卤炖牛肉等招牌菜</li>
-            <li><strong>SKU控制在12-15个</strong>，避免库存积压</li>
-            <li><strong>当天现做、当晚清空</strong>，用新鲜感建立信任</li>
-        `;
-    }
-
-    // Price strategy
-    const prc = document.getElementById('strategy-price');
-    if (lowPrice) {
-        prc.innerHTML = `
-            <li><strong>主攻20元以下价位</strong>，薄利多销抢占市场</li>
-            <li>大量设置 <strong>5-10元小份装</strong>，极致降低尝试门槛</li>
-            <li>推出 <strong>"10元吃饱"套餐</strong>，一份卤菜+米饭</li>
-            <li><strong>充值送优惠</strong>：充100送15，锁定回头客</li>
-        `;
-    } else if (midPrice) {
-        prc.innerHTML = `
-            <li><strong>主力定价20-30元</strong>，这是县城黄金价格带</li>
-            <li>设置 <strong>15元以下小份装</strong>作为引流入口</li>
-            <li>推出 <strong>"荤素1+1"套餐（28元）</strong>，感觉超值</li>
-            <li><strong>会员日88折</strong>，培养每周固定消费习惯</li>
-        `;
-    } else {
-        prc.innerHTML = `
-            <li><strong>主力价位定在20-30元</strong>，匹配县城消费能力</li>
-            <li>设置 <strong>15元以下小份装</strong>，降低尝试门槛</li>
-            <li>推出 <strong>"荤素1+1"套餐</strong>，提升客单价</li>
-            <li><strong>明码标价，分量透明</strong>，避免"卤味刺客"</li>
-            <li>设计 <strong>会员日折扣</strong>，养成固定消费习惯</li>
-        `;
-    }
-
-    // Location strategy
-    const loc = document.getElementById('strategy-location');
-    if (t3) {
-        loc.innerHTML = `
-            <li><strong>社区店绝对优先</strong>，县城商业街人流有限</li>
-            <li>首选 <strong>菜市场口 + 大型小区门卫旁</strong></li>
-            <li>两个店形成 <strong>老城区+新城区</strong>互补布局</li>
-            <li>关注 <strong>学校周边</strong>，放学时段是黄金客流</li>
-            <li><strong>佐餐定位为主</strong>，覆盖家庭晚餐场景</li>
-        `;
-    } else {
-        loc.innerHTML = `
-            <li><strong>社区店 > 商业街</strong>，贴近日常消费场景</li>
-            <li>优先选择 <strong>菜市场附近、大型小区门口、学校周边</strong></li>
-            <li>两个门店形成 <strong>互补布点</strong>，覆盖全城</li>
-            <li>一店可布局 <strong>城郊新建小区</strong>周边</li>
-            <li><strong>佐餐定位</strong> > 休闲零食，更契合县城习惯</li>
-        `;
-    }
-
-    // Ops strategy
-    const ops = document.getElementById('strategy-ops');
-    if (lowPrice) {
-        ops.innerHTML = `
-            <li><strong>微信群"每日秒杀"：</strong>每天一款特价，限量20份</li>
-            <li><strong>拼团玩法：</strong>3人成团享8折，利用熟人网络裂变</li>
-            <li><strong>短视频拍"实惠"：</strong>突出量大价优，吸引价格敏感人群</li>
-            <li><strong>学生优惠：</strong>凭学生证减2元，培养年轻客群</li>
-        `;
-    } else {
-        ops.innerHTML = `
-            <li><strong>微信群运营：</strong>每店建1个群，每日推送今日卤味</li>
-            <li><strong>预售+自提：</strong>群内接龙预订，减少备货浪费</li>
-            <li><strong>短视频推广：</strong>拍制卤过程在抖音同城推广</li>
-            <li><strong>老客带新：</strong>推荐新客双方各减5元</li>
-            <li><strong>节庆营销：</strong>结合榆社庙会做限定套餐</li>
-        `;
-    }
+function getAllSelections(){
+  const all=[];
+  Object.keys(selection).forEach(k=>selection[k].forEach(s=>all.push({...s,cat:k})));
+  return all;
 }
 
-// ===== SYNC FILTER BUTTONS FROM STATE =====
-function syncFiltersFromState() {
-    document.querySelectorAll('[data-filter]').forEach(btn => {
-        const f = btn.dataset.filter;
-        const v = btn.dataset.value;
-        btn.classList.toggle('active', state[f] === v);
+// ===== 分析引擎 =====
+function generateAnalysis(){
+  const all=getAllSelections();
+  const selArea=document.getElementById('selectionArea');
+  const out=document.getElementById('analysisOutput');
+
+  // 更新选中标签
+  if(all.length===0){
+    selArea.innerHTML='<span class="selection-empty">👇 在下方图表中点击数据点（可多选），这里会显示分析结果</span>';
+  }else{
+    selArea.innerHTML=all.map(s=>{
+      const catNames={region:'区域',tier:'城市',price:'价位',priceSeg:'消费段',accept:'接受价位',concern:'关注点',channel:'渠道',scale:'规模',revenue:'品牌',future:'年份'};
+      return `<span class="selection-chip" onclick="toggleSelection('${s.cat}','${s.val}','${s.label}')">${catNames[s.cat]||s.cat}: ${s.label} <span class="x">×</span></span>`;
+    }).join('');
+  }
+
+  // 生成分析
+  if(all.length===0){
+    out.innerHTML=`
+      <strong>📊 默认视角：榆社县卤味经营分析</strong><br><br>
+      榆社县常住人口 <strong>10.9万</strong>，社消总额 <strong>14.67亿</strong>，餐饮收入 <strong>1.97亿</strong>（增长6.8%）。<br>
+      作为三四五线下沉市场，全国卤味门店42.6%分布在此类城市，社区店+熟人经济模式优势明显。<br>
+      建议主力定价 <strong>20-30元</strong>，走"当天现做、不卖隔夜"的社区精品卤味路线。<br><br>
+      <em style="font-size:12px;opacity:.7;">💡 试试点击下方图表的数据点，比如点"西南"+价格"20-30元"，看看分析怎么变</em>`;
+    return;
+  }
+
+  // 收集分析维度
+  let regionText='全国',tierText='各线级城市',priceText='各价位',concernText='',channelText='';
+  let suggestions=[];
+
+  // 区域分析
+  const regions=all.filter(s=>s.cat==='region');
+  if(regions.length>0){
+    regionText=regions.map(r=>r.label).join('+');
+    const regionData={华东:34.0,华中:15.4,西南:13.7,华南:12.5,华北:11.0};
+    let total=0; regions.forEach(r=>total+=(regionData[r.label]||0));
+    suggestions.push(`${regionText}门店合计占比约 <strong>${total.toFixed(1)}%</strong>`);
+    if(regions.some(r=>r.label==='华东')) suggestions.push('华东是全国最大卤味市场，品牌化程度最高，可借鉴其社区店标准化经验');
+    if(regions.some(r=>r.label==='华中')) suggestions.push('华中是绝味、周黑鸭发源地，传统卤味文化深厚，适合打"老卤传承"牌');
+    if(regions.some(r=>r.label==='西南')) suggestions.push('西南辣味经济崛起，辣味卤食消费频次最高，可开发麻辣/藤椒产品线');
+  }
+
+  // 城市层级分析
+  const tiers=all.filter(s=>s.cat==='tier');
+  if(tiers.length>0){
+    tierText=tiers.map(t=>t.label).join('+');
+    const tierData={'新一线':25.7,'二线':21.6,'三线':18.3,'四线':14.2,'五线及以下':10.1};
+    let total=0; tiers.forEach(t=>total+=(tierData[t.label]||0));
+    const isDown=tiers.some(t=>['三线','四线','五线及以下'].includes(t.label));
+    if(isDown){
+      suggestions.push(`三四五线下沉市场门店合计占比 <strong>42.6%</strong>，是卤味消费的核心阵地`);
+      suggestions.push('县城社区店+熟人经济模式在下沉市场韧性最强，小店靠品质和人情味可与大品牌抗衡');
+    }
+    if(tiers.some(t=>t.label==='新一线')){
+      suggestions.push('新一线城市竞争最激烈，人均消费25-35元为主，县城不应照搬大城市定价模式');
+    }
+  }
+
+  // 价格分析
+  const prices=all.filter(s=>s.cat==='price'||s.cat==='priceSeg'||s.cat==='accept');
+  if(prices.length>0){
+    priceText=prices.map(p=>p.label).join('+');
+    if(prices.some(p=>p.label.includes('20')&&p.label.includes('30'))){
+      suggestions.push('<strong>20-30元是最大公约数</strong>——42.7%消费者最接受这个价位，应作为主力产品定价区间');
+      suggestions.push('对榆社县而言，20-30元匹配县城消费水平，不会给人"卤味刺客"的印象');
+    }
+    if(prices.some(p=>p.label.includes('20以下')||p.label.includes('15'))){
+      suggestions.push('20元以下门店占比从16%升至20%，消费降级趋势明显，应保留充足的平价产品线引流');
+    }
+    if(prices.some(p=>p.label.includes('30')||p.label.includes('40')||p.label.includes('60'))){
+      suggestions.push('7.9%消费者愿意为品质支付60元以上，可针对这部分人群推出精品卤味礼盒');
+    }
+  }
+
+  // 关注因素
+  const concerns=all.filter(s=>s.cat==='concern');
+  if(concerns.length>0){
+    concernText='关注: '+concerns.map(c=>c.label).join('、');
+    if(concerns.some(c=>c.label.includes('食品安全'))) suggestions.push('<strong>食品安全是消费者第一关注点</strong>（88%），"当天现做、明厨亮灶"是最强信任背书');
+    if(concerns.some(c=>c.label.includes('性价比'))) suggestions.push('价格/性价比关注度71%，县城消费者对价格更敏感，定价需格外谨慎');
+  }
+
+  // 渠道分析
+  const channels=all.filter(s=>s.cat==='channel');
+  if(channels.length>0){
+    channelText='渠道: '+channels.map(c=>c.label).join('、');
+    if(channels.some(c=>c.label.includes('个体')||c.label.includes('路边摊'))){
+      suggestions.push('个体店+路边摊合计占45%的购买渠道，说明消费者更看重<strong>方便、新鲜、烟火气</strong>，而非品牌名气');
+    }
+  }
+
+  // 规模分析
+  const scales=all.filter(s=>s.cat==='scale');
+  if(scales.some(s=>s.label.includes('50家'))){
+    suggestions.push('<strong>85.6%的卤味品牌门店不足50家</strong>——小规模经营是行业主流，不必焦虑规模，专注做好社区店');
+  }
+
+  // 品牌分析
+  const revs=all.filter(s=>s.cat==='revenue');
+  if(revs.some(s=>s.label.includes('绝味'))){
+    suggestions.push('绝味2024年营收55.6亿但上市首亏，说明"规模大≠赚钱"，单店盈利比门店数量更重要');
+  }
+
+  // 未来年份
+  const futures=all.filter(s=>s.cat==='future');
+  if(futures.length>=2){
+    const vals=futures.map(f=>parseFloat(f.val));
+    const min=Math.min(...vals),max=Math.max(...vals);
+    suggestions.push(`选中年份市场规模从 <strong>${min}亿→${max}亿</strong>，增长约 <strong>${((max-min)/min*100).toFixed(1)}%</strong>，行业低速但稳定增长`);
+  }
+
+  // 榆社县专属建议
+  const yusheTips=[
+    '榆社县两店可形成<strong>老城区+新城区</strong>互补布局，覆盖全城10万人口',
+    '县城熟人社会天然适合私域运营——微信群+老客带新，比在大城市做推广有效得多',
+    '榆社消费增长8.7%高于全国，本地市场正在扩张，是布局的好时机'
+  ];
+
+  out.innerHTML=`
+    <strong>📊 分析维度：</strong>${regionText} · ${tierText} · ${priceText}</span><br>
+    ${concernText?concernText+'<br>':''}${channelText?channelText+'<br>':''}
+    <br><strong>🔍 核心发现：</strong><br>
+    ${suggestions.length>0?suggestions.map(s=>'• '+s).join('<br>'):'• 根据所选数据点，暂无特殊发现'}
+    <br><br><strong>📍 榆社县建议：</strong><br>
+    ${yusheTips.map(t=>'• '+t).join('<br>')}`;
+}
+
+// ===== 图表渲染 =====
+function renderAllCharts(){
+  Object.values(chartInstances).forEach(c=>{if(c)c.destroy();});
+
+  const doughOpts={
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{padding:8,usePointStyle:true,font:{size:10}}},datalabels:{color:'#fff',font:{size:10,weight:'bold'},formatter:v=>v+'%'}}
+  };
+
+  // Helper: get colors for selected indices
+  function selColors(data,selVals,labels){
+    return data.map((_,i)=>{
+      const lb=labels[i];
+      if(selVals.some(s=>s===lb||s===i)) return COLORS_HL[i%COLORS.length];
+      return selVals.length>0?COLORS.map(c=>c.replace(')','').replace('rgb','rgba').replace('(','(').replace(')','')+',0.2)')[i%COLORS.length]:COLORS[i%COLORS.length];
     });
+  }
+  function selAlpha(selVals,labels,i){
+    if(selVals.length===0) return COLORS[i%COLORS.length];
+    const lb=labels[i];
+    return selVals.some(s=>s===lb||s===i)?COLORS_HL[i%COLORS.length]:'rgba(200,200,200,0.2)';
+  }
+
+  // 1. Market History
+  {
+    const selVals=selection.future.map(s=>s.val);
+    const labels=['2018','2019','2020','2021','2022','2023','2024','2025E'];
+    const data=[870,1060,1240,3140,2980,3180,1573,1620];
+    chartInstances.market=new Chart(document.getElementById('marketHistoryChart'),{
+      type:'bar',
+      data:{labels,datasets:[{label:'亿元',data,backgroundColor:selVals.length>0?labels.map((l,i)=>selVals.includes(l)?'#C0392B':'rgba(200,200,200,0.2)'):['#FDEDEC','#FADBD8','#F5B7B1','#E74C3C','#F1948A','#D4A017','#C0392B','#922B21'],borderRadius:6}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('future',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{display:false},datalabels:{anchor:'end',align:'end',color:'#555',font:{size:9,weight:'bold'},formatter:v=>v>=1000?(v/100).toFixed(0)+'亿':v+'亿'}},
+        scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}}}
+      }
+    });
+  }
+
+  // 2. Region
+  {
+    const labels=['华东','华中','西南','华南','华北','其他'];
+    const data=[34.0,15.4,13.7,12.5,11.0,13.4];
+    const selVals=selection.region.map(s=>s.val);
+    chartInstances.region=new Chart(document.getElementById('regionChart'),{
+      type:'doughnut',
+      data:{labels,datasets:[{data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderWidth:0}]},
+      options:{
+        ...doughOpts,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('region',labels[items[0].index],labels[items[0].index]);}
+      }
+    });
+  }
+
+  // 3. City Tier
+  {
+    const labels=['新一线','二线','三线','四线','五线及以下'];
+    const data=[25.7,21.6,18.3,14.2,10.1];
+    const selVals=selection.tier.map(s=>s.val);
+    chartInstances.tier=new Chart(document.getElementById('cityTierChart'),{
+      type:'bar',
+      data:{labels,datasets:[{label:'%',data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderRadius:6}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('tier',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{display:false},datalabels:{anchor:'end',align:'end',color:'#555',font:{size:10,weight:'bold'},formatter:v=>v+'%'}},
+        scales:{y:{beginAtZero:true,max:30,grid:{color:'rgba(0,0,0,0.05)'}}}
+      }
+    });
+  }
+
+  // 4. Price Segment
+  {
+    const labels=['20元以下','20-25元','25-35元','35元及以上'];
+    const selVals=selection.priceSeg.map(s=>s.val);
+    chartInstances.priceSeg=new Chart(document.getElementById('priceSegmentChart'),{
+      type:'bar',
+      data:{labels,datasets:[
+        {label:'2023',data:[16,18,33,33],backgroundColor:'rgba(212,160,23,0.6)',borderRadius:4},
+        {label:'2025',data:[20,21.1,29.5,29.4],backgroundColor:'rgba(192,57,43,0.8)',borderRadius:4}
+      ]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('priceSeg',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{position:'bottom',labels:{padding:8,usePointStyle:true,font:{size:10}}},datalabels:{display:false}},
+        scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}}}
+      }
+    });
+  }
+
+  // 5. Accept Price
+  {
+    const labels=['20-30元','15-20元','30-40元','40-60元','60元+'];
+    const data=[42.7,22,16.5,10.9,7.9];
+    const selVals=selection.accept.map(s=>s.val);
+    chartInstances.accept=new Chart(document.getElementById('acceptPriceChart'),{
+      type:'doughnut',
+      data:{labels,datasets:[{data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderWidth:0}]},
+      options:{...doughOpts,onClick:(e,items)=>{if(items.length>0)toggleSelection('accept',labels[items[0].index],labels[items[0].index]);}}
+    });
+  }
+
+  // 6. Concern
+  {
+    const labels=['食品安全','口味/味道','价格/性价比','品牌口碑','促销活动','包装便利'];
+    const data=[88,82,71,55,42,30];
+    const selVals=selection.concern.map(s=>s.val);
+    chartInstances.concern=new Chart(document.getElementById('concernChart'),{
+      type:'bar',
+      data:{labels,datasets:[{label:'%',data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderRadius:6}]},
+      options:{
+        indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('concern',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{display:false},datalabels:{anchor:'end',align:'end',color:'#555',font:{size:10,weight:'bold'},formatter:v=>v+'%'}},
+        scales:{x:{beginAtZero:true,max:100,grid:{color:'rgba(0,0,0,0.05)'}},y:{grid:{display:false}}}
+      }
+    });
+  }
+
+  // 7. Channel
+  {
+    const labels=['连锁品牌店','个体店/摊','路边摊/菜市','线上外卖','商超便利店'];
+    const data=[33.7,28,17,13,8.3];
+    const selVals=selection.channel.map(s=>s.val);
+    chartInstances.channel=new Chart(document.getElementById('channelChart'),{
+      type:'doughnut',
+      data:{labels,datasets:[{data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderWidth:0}]},
+      options:{...doughOpts,onClick:(e,items)=>{if(items.length>0)toggleSelection('channel',labels[items[0].index],labels[items[0].index]);}}
+    });
+  }
+
+  // 8. Scale
+  {
+    const labels=['50家及以下','50-200家','200-500家','500家以上'];
+    const data=[85.6,8.2,4.8,1.4];
+    const selVals=selection.scale.map(s=>s.val);
+    chartInstances.scale=new Chart(document.getElementById('scaleChart'),{
+      type:'doughnut',
+      data:{labels,datasets:[{data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderWidth:0}]},
+      options:{...doughOpts,onClick:(e,items)=>{if(items.length>0)toggleSelection('scale',labels[items[0].index],labels[items[0].index]);}}
+    });
+  }
+
+  // 9. Revenue
+  {
+    const labels=['绝味食品','周黑鸭','煌上煌'];
+    const data=[55.6,24.2,17.3];
+    const selVals=selection.revenue.map(s=>s.val);
+    chartInstances.revenue=new Chart(document.getElementById('revenueChart'),{
+      type:'bar',
+      data:{labels,datasets:[{label:'亿元',data,backgroundColor:labels.map((l,i)=>selAlpha(selVals,labels,i)),borderRadius:6}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('revenue',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{display:false},datalabels:{anchor:'end',align:'end',color:'#555',font:{size:11,weight:'bold'},formatter:v=>v+'亿'}},
+        scales:{y:{beginAtZero:true,grid:{color:'rgba(0,0,0,0.05)'}}}
+      }
+    });
+  }
+
+  // 10. Future
+  {
+    const labels=['2023','2024','2025E','2026E','2027E','2028E','2029E','2030E'];
+    const data=[3180,1573,1620,1670,1730,1800,1880,1960];
+    const selVals=selection.future.map(s=>s.val);
+    chartInstances.future=new Chart(document.getElementById('futureChart'),{
+      type:'line',
+      data:{labels,datasets:[{label:'亿元',data,borderColor:'#C0392B',backgroundColor:function(c){const g=c.chart.ctx.createLinearGradient(0,0,0,280);g.addColorStop(0,'rgba(192,57,43,0.25)');g.addColorStop(1,'rgba(192,57,43,0)');return g},fill:true,tension:.4,pointBackgroundColor:labels.map(l=>selVals.includes(l)?'#D4A017':'#C0392B'),pointRadius:labels.map(l=>selVals.includes(l)?8:5),borderWidth:3}]},
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        onClick:(e,items)=>{if(items.length>0)toggleSelection('future',labels[items[0].index],labels[items[0].index]);},
+        plugins:{legend:{display:false},datalabels:{anchor:'end',align:'end',color:'#555',font:{size:9,weight:'bold'},formatter:v=>v+'亿'}},
+        scales:{y:{beginAtZero:false,grid:{color:'rgba(0,0,0,0.05)'}}}
+      }
+    });
+  }
 }
 
-// ===== FILTER BUTTON CLICKS =====
-document.querySelectorAll('[data-filter]').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const filter = this.dataset.filter;
-        const value = this.dataset.value;
+function updateAll(){
+  renderAllCharts();
+  generateAnalysis();
+}
 
-        // If clicking active, set to 'all'
-        if (state[filter] === value) {
-            state[filter] = 'all';
-        } else {
-            state[filter] = value;
-        }
+function copyAnalysis(){
+  const text=document.getElementById('analysisOutput').innerText;
+  navigator.clipboard.writeText(text).then(()=>{
+    alert('✅ 分析结论已复制到剪贴板，可以粘贴分享！');
+  }).catch(()=>{
+    alert('复制失败，请手动选中文字复制');
+  });
+}
 
-        // Reset chart highlights when filter changes
-        state.highlight = { regionIdx: -1, tierIdx: -1, priceSegIdx: -1, acceptIdx: -1, concernIdx: -1, channelIdx: -1, futureYear: -1 };
+// ===== Init =====
+document.addEventListener('DOMContentLoaded',updateAll);
 
-        syncFiltersFromState();
-        updateAll();
-    });
+// ===== Scroll =====
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>400);
+  const secs=document.querySelectorAll('section');
+  const links=document.querySelectorAll('.nav a');
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id;});
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 });
 
-// ===== UPDATE ALL CHARTS =====
-function updateAll() {
-    updateInsight();
-    // Re-render all charts (destroy and recreate)
-    renderAllCharts();
-}
-
-// ===== CHART INSTANCES =====
-const charts = {};
-
-// ===== RENDER ALL CHARTS =====
-function renderAllCharts() {
-    // Destroy existing
-    Object.values(charts).forEach(c => { if (c) c.destroy(); });
-
-    const hl = state.highlight;
-    const isAll = state.region === 'all' && state.tier === 'all' && state.price === 'all';
-
-    // Helper: get bar colors with highlight
-    function barColors(data, hlIdx) {
-        return data.map((_, i) => {
-            if (hlIdx >= 0) return i === hlIdx ? COLORS_ACTIVE[i % COLORS.length] : COLORS_INACTIVE[i % COLORS.length];
-            return COLORS[i % COLORS.length];
-        });
-    }
-    function bgColors(data, hlIdx) {
-        return data.map((_, i) => {
-            if (hlIdx >= 0) return i === hlIdx ? 'rgba(192,57,43,0.8)' : 'rgba(192,57,43,0.2)';
-            return i === 0 ? 'rgba(192,57,43,0.8)' : 'rgba(192,57,43,0.6)';
-        });
-    }
-
-    // 1. Market History
-    {
-        const ctx = document.getElementById('marketHistoryChart').getContext('2d');
-        charts.market = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: D.futureLabels.slice(0, 8),
-                datasets: [{
-                    label: '市场规模（亿元）',
-                    data: [870, 1060, 1240, 3140, 2980, 3180, 1573, 1620],
-                    backgroundColor: ['#FDEDEC','#FADBD8','#F5B7B1','#E74C3C','#F1948A','#D4A017','#C0392B','#922B21'],
-                    borderRadius: 6,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].datasetIndex !== undefined ? items[0].index : 0;
-                        state.highlight.regionIdx = idx;
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    datalabels: {
-                        anchor: 'end', align: 'end', color: '#555', font: { size: 9, weight: 'bold' },
-                        formatter: (v) => v >= 1000 ? (v/100).toFixed(0)+'亿' : v+'亿'
-                    }
-                },
-                scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } } }
-            }
-        });
-    }
-
-    // 2. Region Chart
-    {
-        const ctx = document.getElementById('regionChart').getContext('2d');
-        const hlIdx = hl.regionIdx >= 0 && hl.regionIdx < 6 ? hl.regionIdx : -1;
-        charts.region = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: D.regions,
-                datasets: [{
-                    data: D.regionData,
-                    backgroundColor: hlIdx >= 0 ? D.regions.map((_,i) => i===hlIdx ? COLORS[i] : COLORS_INACTIVE[i]) : COLORS,
-                    borderWidth: 0,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        const regionMap = ['east','central','west','south','north','other'];
-                        const r = regionMap[idx];
-                        // Toggle
-                        if (state.highlight.regionIdx === idx) {
-                            state.highlight.regionIdx = -1;
-                            state.region = 'all';
-                        } else {
-                            state.highlight.regionIdx = idx;
-                            state.region = r;
-                            state.tier = 'all';
-                            state.price = 'all';
-                            state.highlight.tierIdx = -1;
-                            state.highlight.priceSegIdx = -1;
-                            state.highlight.acceptIdx = -1;
-                        }
-                        syncFiltersFromState();
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { position: 'bottom', labels: { padding: 10, usePointStyle: true, font: { size: 11 } } },
-                    datalabels: {
-                        color: hlIdx >= 0 ? (d => d.dataIndex === hlIdx ? '#fff' : '#999') : '#fff',
-                        font: { size: 11, weight: 'bold' },
-                        formatter: (v) => v + '%'
-                    }
-                }
-            }
-        });
-    }
-
-    // 3. City Tier Chart
-    {
-        const ctx = document.getElementById('cityTierChart').getContext('2d');
-        const hlIdx = hl.tierIdx >= 0 && hl.tierIdx < 5 ? hl.tierIdx : -1;
-        charts.tier = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: D.tiers,
-                datasets: [{
-                    label: '门店占比(%)',
-                    data: D.tierData,
-                    backgroundColor: D.tiers.map((_,i) => i===hlIdx ? '#C0392B' : (hlIdx>=0 ? 'rgba(192,57,43,0.2)' : (i===0?'#C0392B':(i===1?'#D4A017':'#2980B9')))),
-                    borderRadius: 6,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        const tierMap = ['t1','t2','t3','t4','t5'];
-                        const t = idx <= 1 ? tierMap[idx] : 't3';
-                        if (state.highlight.tierIdx === idx) {
-                            state.highlight.tierIdx = -1;
-                            state.tier = 'all';
-                        } else {
-                            state.highlight.tierIdx = idx;
-                            state.tier = idx <= 1 ? tierMap[idx] : 't3';
-                            state.region = 'all';
-                            state.price = 'all';
-                            state.highlight.regionIdx = -1;
-                        }
-                        syncFiltersFromState();
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    datalabels: {
-                        anchor: 'end', align: 'end', color: '#555', font: { size: 11, weight: 'bold' },
-                        formatter: (v) => v + '%'
-                    }
-                },
-                scales: { y: { beginAtZero: true, max: 30, grid: { color: 'rgba(0,0,0,0.05)' } } }
-            }
-        });
-    }
-
-    // 4. Price Segment Chart
-    {
-        const ctx = document.getElementById('priceSegmentChart').getContext('2d');
-        charts.priceSeg = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: D.priceLabels,
-                datasets: [
-                    {
-                        label: '2023年',
-                        data: D.priceData23,
-                        backgroundColor: 'rgba(212,160,23,0.6)',
-                        borderRadius: 4,
-                    },
-                    {
-                        label: '2025年4月',
-                        data: D.priceData25,
-                        backgroundColor: 'rgba(192,57,43,0.8)',
-                        borderRadius: 4,
-                    }
-                ]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        const priceMap = { 0: 'low', 1: 'mid', 2: 'high', 3: 'high' };
-                        const p = priceMap[idx] || 'all';
-                        if (state.highlight.priceSegIdx === idx) {
-                            state.highlight.priceSegIdx = -1;
-                            state.price = 'all';
-                        } else {
-                            state.highlight.priceSegIdx = idx;
-                            state.price = p;
-                            state.region = 'all';
-                            state.tier = 'all';
-                            state.highlight.regionIdx = -1;
-                            state.highlight.tierIdx = -1;
-                        }
-                        syncFiltersFromState();
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { position: 'bottom', labels: { padding: 10, usePointStyle: true, font: { size: 11 } } },
-                    datalabels: { display: false }
-                },
-                scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } } }
-            }
-        });
-    }
-
-    // 5. Accept Price Chart
-    {
-        const ctx = document.getElementById('acceptPriceChart').getContext('2d');
-        const hlIdx = hl.acceptIdx >= 0 && hl.acceptIdx < 5 ? hl.acceptIdx : -1;
-        charts.accept = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: D.acceptLabels,
-                datasets: [{
-                    data: D.acceptData,
-                    backgroundColor: hlIdx >= 0 ? D.acceptLabels.map((_,i) => i===hlIdx?COLORS[i]:COLORS_INACTIVE[i]) : COLORS,
-                    borderWidth: 0,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        const priceMap = { 0: 'mid', 1: 'low', 2: 'high', 3: 'high', 4: 'high' };
-                        if (state.highlight.acceptIdx === idx) {
-                            state.highlight.acceptIdx = -1;
-                            state.price = 'all';
-                        } else {
-                            state.highlight.acceptIdx = idx;
-                            state.price = priceMap[idx] || 'all';
-                            state.region = 'all';
-                            state.tier = 'all';
-                            state.highlight.regionIdx = -1;
-                            state.highlight.tierIdx = -1;
-                        }
-                        syncFiltersFromState();
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { position: 'bottom', labels: { padding: 10, usePointStyle: true, font: { size: 11 } } },
-                    datalabels: { color: '#fff', font: { size: 11, weight: 'bold' }, formatter: (v) => v+'%' }
-                }
-            }
-        });
-    }
-
-    // 6. Concern Chart
-    {
-        const ctx = document.getElementById('concernChart').getContext('2d');
-        const hlIdx = hl.concernIdx >= 0 && hl.concernIdx < 6 ? hl.concernIdx : -1;
-        charts.concern = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: D.concernLabels,
-                datasets: [{
-                    label: '关注度(%)',
-                    data: D.concernData,
-                    backgroundColor: D.concernLabels.map((_,i) => hlIdx >= 0 ? (i===hlIdx?COLORS[i]:COLORS_INACTIVE[i]) : COLORS[i]),
-                    borderRadius: 6,
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        if (state.highlight.concernIdx === idx) {
-                            state.highlight.concernIdx = -1;
-                        } else {
-                            state.highlight.concernIdx = idx;
-                        }
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    datalabels: { anchor: 'end', align: 'end', color: '#555', font: { size: 11, weight: 'bold' }, formatter: (v) => v+'%' }
-                },
-                scales: {
-                    x: { beginAtZero: true, max: 100, grid: { color: 'rgba(0,0,0,0.05)' } },
-                    y: { grid: { display: false } }
-                }
-            }
-        });
-    }
-
-    // 7. Channel Chart
-    {
-        const ctx = document.getElementById('channelChart').getContext('2d');
-        charts.channel = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: D.channelLabels,
-                datasets: [{
-                    data: D.channelData,
-                    backgroundColor: COLORS,
-                    borderWidth: 0,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'bottom', labels: { padding: 10, usePointStyle: true, font: { size: 11 } } },
-                    datalabels: { color: '#fff', font: { size: 11, weight: 'bold' }, formatter: (v) => v+'%' }
-                }
-            }
-        });
-    }
-
-    // 8. Scale Chart
-    {
-        const ctx = document.getElementById('scaleChart').getContext('2d');
-        charts.scale = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: D.scaleLabels,
-                datasets: [{
-                    data: D.scaleData,
-                    backgroundColor: ['#C0392B','#D4A017','#2980B9','#27AE60'],
-                    borderWidth: 0,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'bottom', labels: { padding: 10, usePointStyle: true, font: { size: 11 } } },
-                    datalabels: { color: '#fff', font: { size: 11, weight: 'bold' }, formatter: (v) => v+'%' }
-                }
-            }
-        });
-    }
-
-    // 9. Revenue Chart
-    {
-        const ctx = document.getElementById('revenueChart').getContext('2d');
-        charts.revenue = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: D.revenueLabels,
-                datasets: [{
-                    label: '2024年营收（亿元）',
-                    data: D.revenueData,
-                    backgroundColor: ['#C0392B','#2980B9','#D4A017'],
-                    borderRadius: 6,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        if (state.highlight.concernIdx === idx+10) {
-                            state.highlight.concernIdx = -1;
-                        } else {
-                            state.highlight.concernIdx = idx+10;
-                        }
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    datalabels: { anchor: 'end', align: 'end', color: '#555', font: { size: 12, weight: 'bold' }, formatter: (v) => v+'亿' }
-                },
-                scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } } }
-            }
-        });
-    }
-
-    // 10. Future Chart
-    {
-        const ctx = document.getElementById('futureChart').getContext('2d');
-        const hlYear = hl.futureYear >= 0 && hl.futureYear < 8 ? hl.futureYear : -1;
-        charts.future = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: D.futureLabels,
-                datasets: [{
-                    label: '市场规模（亿元）',
-                    data: D.futureData,
-                    borderColor: '#C0392B',
-                    backgroundColor: function(c) {
-                        const g = c.chart.ctx.createLinearGradient(0,0,0,300);
-                        g.addColorStop(0,'rgba(192,57,43,0.25)');
-                        g.addColorStop(1,'rgba(192,57,43,0)');
-                        return g;
-                    },
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: D.futureData.map((_,i) => i===hlYear ? '#D4A017' : '#C0392B'),
-                    pointRadius: D.futureData.map((_,i) => i===hlYear ? 9 : 5),
-                    pointHoverRadius: 8,
-                    borderWidth: 3,
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                onClick: (e, items) => {
-                    if (items.length > 0) {
-                        const idx = items[0].index;
-                        if (state.highlight.futureYear === idx) {
-                            state.highlight.futureYear = -1;
-                        } else {
-                            state.highlight.futureYear = idx;
-                        }
-                        updateAll();
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    datalabels: {
-                        anchor: 'end', align: 'end', color: '#555', font: { size: 9, weight: 'bold' },
-                        formatter: (v) => v+'亿'
-                    }
-                },
-                scales: {
-                    y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.05)' } }
-                }
-            }
-        });
-    }
-}
-
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-    renderAllCharts();
-    updateInsight();
+// ===== Smooth scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t)window.scrollTo({top:t.offsetTop-60,behavior:'smooth'});
+  });
 });
 
-// ===== Intersection Observer =====
-{
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.card, .insight-card, .strategy-card, .highlight-box, .insight-panel').forEach(el => {
-        el.classList.add('fade-in');
-        obs.observe(el);
-    });
-}
-
-// ===== Scroll to top =====
-window.addEventListener('scroll', () => {
-    document.getElementById('scrollTopBtn').classList.toggle('show', window.scrollY > 400);
-});
-
-// ===== Nav highlight =====
-{
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(s => {
-            if (window.scrollY >= s.offsetTop - 120) current = s.id;
-        });
-        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-    });
-}
-
-// ===== Scroll padding for fixed nav =====
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
-        }
-    });
-});
+// ===== Fade in =====
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');})},{threshold:.1});
+document.querySelectorAll('.card,.insight-card,.strategy-card,.highlight-box').forEach(el=>{el.classList.add('fade-in');obs.observe(el);});
 </script>
 
 </body>
